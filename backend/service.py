@@ -45,6 +45,18 @@ class Settings:
         return settings
 
 
+def email_address(value):
+    if not isinstance(value, str) or len(value) > 254 or any(ord(c) < 32 or ord(c) == 127 for c in value):
+        raise UserError("답변 받을 이메일 주소를 올바르게 입력하세요.")
+    value = value.strip()
+    if not re.fullmatch(r"[A-Za-z0-9.!#$%&'*+/=?^_`{|}~-]+@[A-Za-z0-9](?:[A-Za-z0-9-]*[A-Za-z0-9])?(?:\.[A-Za-z0-9](?:[A-Za-z0-9-]*[A-Za-z0-9])?)+", value):
+        raise UserError("답변 받을 이메일 주소를 올바르게 입력하세요.")
+    local, domain = value.rsplit("@", 1)
+    if len(local) > 64 or local.startswith(".") or local.endswith(".") or ".." in local or any(len(s) > 63 for s in domain.split(".")):
+        raise UserError("답변 받을 이메일 주소를 올바르게 입력하세요.")
+    return local + "@" + domain.lower()
+
+
 def now_iso():
     return datetime.now(timezone.utc).isoformat(timespec="seconds")
 
@@ -259,10 +271,11 @@ class Service:
                 LIMITER.check("submit:"+client_key,10,600)
             title=text(event.get("title",""),150);content=text(event.get("content",""),5000)
             if not title or not content:raise UserError("제목과 내용을 입력하세요.")
+            email=email_address(event.get("email"))
             app_id=text(event.get("appId",""),80)
             app=next((a for a in self.public_payload()["apps"] if a["id"]==app_id),None)
             if app_id and not app:raise UserError("관련 앱을 확인하세요.")
-            record={"id":rid,"requestId":rid,"appId":app_id,"appTitle":app["title"] if app else "전체 질문","authorNickname":text(event.get("nickname",""),60),"title":title,"content":content,"createdAt":now_iso(),"status":"미확인","adminReply":"","repliedAt":""}
+            record={"email":email,"id":rid,"requestId":rid,"appId":app_id,"appTitle":app["title"] if app else "전체 질문","authorNickname":text(event.get("nickname",""),60),"title":title,"content":content,"createdAt":now_iso(),"status":"미확인","adminReply":"","repliedAt":""}
             index_raw=repo.read("questions/index.json",head)
             index=json.loads(index_raw) if index_raw else []
             if len(index)>=500:raise UserError("질문 보관함이 가득 찼습니다. 관리자에게 다른 경로로 문의하세요.")

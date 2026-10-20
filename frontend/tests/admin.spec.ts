@@ -1,5 +1,5 @@
 import {test,expect,Page} from '@playwright/test';
-const base='http://127.0.0.1:8521';
+const base='http://127.0.0.1:8621';
 async function login(page:Page){
   await page.goto(base);await page.getByRole('button',{name:'관리자 모드',exact:true}).click();
   await page.getByLabel('관리자 코드',{exact:true}).fill('Test-admin-code-2026!');
@@ -18,6 +18,7 @@ test('private submission, server auth, session separation, admin reply and logou
   await guest.goto(base+'/?view=guestbook');
   await expect(guest.getByRole('heading',{name:'공개 질문',exact:true})).toBeVisible();
   await guest.getByRole('button',{name:'비밀 글 작성',exact:true}).click();
+  await guest.getByLabel('답변 받을 이메일 (필수)',{exact:true}).fill('writer@example.com');
   await guest.getByLabel('비밀 글 제목',{exact:true}).fill('PRIVATE_SENTINEL_TITLE');
   await guest.getByLabel('비밀 글 내용',{exact:true}).fill('PRIVATE_SENTINEL_BODY_2026');
   await guest.getByRole('button',{name:'비밀 글 접수',exact:true}).click();
@@ -31,10 +32,13 @@ test('private submission, server auth, session separation, admin reply and logou
   await page.getByRole('button',{name:'비밀 질문',exact:true}).click();await page.getByRole('button',{name:'질문 불러오기',exact:true}).click();
   await page.getByRole('button',{name:/PRIVATE_SENTINEL_TITLE/}).first().click();
   await expect(page.locator('.private-body')).toContainText('PRIVATE_SENTINEL_BODY_2026');
+  await expect(page.getByLabel('답변 받을 이메일',{exact:true})).toHaveValue('writer@example.com');
   await page.getByLabel('비공개 관리자 답변·메모',{exact:true}).fill('PRIVATE_ADMIN_REPLY');
   await page.getByLabel('질문 상태',{exact:true}).selectOption('답변 완료');
   await page.getByRole('button',{name:'답변·상태 저장',exact:true}).click();
   await expect(page.getByRole('status')).toContainText('저장했습니다');
+  await page.getByRole('button',{name:/PRIVATE_SENTINEL_TITLE/}).first().click();
+  await page.screenshot({path:'../screenshots/manual-email-admin.png'});
   await guest.getByRole('button',{name:'관리자 모드',exact:true}).click();
   await expect(guest.getByLabel('관리자 코드',{exact:true})).toBeVisible();
   await expect(guest.getByText('PRIVATE_ADMIN_REPLY')).toHaveCount(0);
@@ -102,7 +106,7 @@ test('mobile manager and question board screenshots',async({page})=>{
 });
 
 test('real server inactivity expiry clears administrator interface',async({page})=>{
-  await page.goto('http://127.0.0.1:8523/');await page.getByRole('button',{name:'관리자 모드',exact:true}).click();
+  await page.goto('http://127.0.0.1:8623/');await page.getByRole('button',{name:'관리자 모드',exact:true}).click();
   await page.getByLabel('관리자 코드',{exact:true}).fill('Test-admin-code-2026!');await page.getByRole('button',{name:'관리자 로그인',exact:true}).click();
   await expect(page.getByRole('button',{name:'새 앱 작성',exact:true})).toBeVisible();
   await expect(page.getByLabel('관리자 코드',{exact:true})).toBeVisible({timeout:8000});
