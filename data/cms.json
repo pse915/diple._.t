@@ -96,7 +96,9 @@
           "웹 접속 가능한 모든 기기"
         ],
         "useCases": [],
-        "instructions": [],
+        "instructions": [
+          "사용설명서를 참고해주세요"
+        ],
         "changelog": [],
         "category": "교무 업무",
         "featured": true,
@@ -587,7 +589,9 @@
           "웹 접속 가능한 모든 기기"
         ],
         "useCases": [],
-        "instructions": [],
+        "instructions": [
+          "사용설명서를 참고해주세요"
+        ],
         "changelog": [],
         "category": "교무 업무",
         "featured": true,
@@ -984,6 +988,10 @@
   },
   "history": [
     {
+      "id": "719bebac-1853-401c-8262-53a0625bcbc6",
+      "createdAt": "2026-10-20T13:37:12+00:00"
+    },
+    {
       "id": "4cb1d55b-4573-4390-9935-26d42154fbac",
       "createdAt": "2026-10-20T13:36:22+00:00"
     },
@@ -1000,5 +1008,5 @@
       "createdAt": "2026-10-20T13:21:52+00:00"
     }
   ],
-  "updatedAt": "2026-10-20T13:36:24+00:00"
+  "updatedAt": "2026-10-20T13:37:14+00:00"
 }
