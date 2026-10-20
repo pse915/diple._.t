@@ -520,7 +520,7 @@
             "id": "post-36e9b107-936",
             "title": "기술교사 Streamlit + Github + Google sheets 웹앱 개발하기",
             "summary": "강의 자료 pdf를 첨부합니다.",
-            "content": "",
+            "content": "강의 자료 pdf를 첨부합니다. 궁금한 사항은 질문게시판을 사용해주세요.",
             "tags": [],
             "links": [
               {
@@ -1065,7 +1065,7 @@
             "id": "post-36e9b107-936",
             "title": "기술교사 Streamlit + Github + Google sheets 웹앱 개발하기",
             "summary": "강의 자료 pdf를 첨부합니다.",
-            "content": "",
+            "content": "강의 자료 pdf를 첨부합니다. 궁금한 사항은 질문게시판을 사용해주세요.",
             "tags": [],
             "links": [
               {
@@ -1091,6 +1091,10 @@
     ]
   },
   "history": [
+    {
+      "id": "43348635-fc71-4d77-b85c-646ae25f312b",
+      "createdAt": "2026-10-20T14:46:41+00:00"
+    },
     {
       "id": "3ce49601-99d2-4dbf-b864-8eea7ec8091d",
       "createdAt": "2026-10-20T14:45:37+00:00"
@@ -1156,5 +1160,5 @@
       "createdAt": "2026-10-20T13:21:52+00:00"
     }
   ],
-  "updatedAt": "2026-10-20T14:45:38+00:00"
+  "updatedAt": "2026-10-20T14:46:43+00:00"
 }
