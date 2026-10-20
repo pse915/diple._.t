@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "published": {
     "site": {
-      "title": "기술교사의 앱 공방",
+      "title": "Diple의 앱 공방",
       "brand": "APP ATELIER",
       "brandMark": "D",
       "tagline": "수업과 학교 업무를 더 편리하게 만드는 앱을 만듭니다.",
@@ -510,7 +510,7 @@
   },
   "draft": {
     "site": {
-      "title": "기술교사의 앱 공방",
+      "title": "Diple의 앱 공방",
       "brand": "APP ATELIER",
       "brandMark": "D",
       "tagline": "수업과 학교 업무를 더 편리하게 만드는 앱을 만듭니다.",
@@ -1018,6 +1018,10 @@
   },
   "history": [
     {
+      "id": "94432ffc-0cb2-4b10-b5e4-d7781af7213d",
+      "createdAt": "2026-10-20T14:11:47+00:00"
+    },
+    {
       "id": "16889a85-3ccb-4b21-a9f6-a6c6bdf034cf",
       "createdAt": "2026-10-20T14:09:29+00:00"
     },
@@ -1062,5 +1066,5 @@
       "createdAt": "2026-10-20T13:21:52+00:00"
     }
   ],
-  "updatedAt": "2026-10-20T14:09:31+00:00"
+  "updatedAt": "2026-10-20T14:11:49+00:00"
 }
