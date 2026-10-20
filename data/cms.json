@@ -87,7 +87,7 @@
         "thumbnail": "assets/uploads/c82f15bfdd35716f66f4fe11a2cdc4afe716aefc07f15aada088c4dcb77cc6c0.webp",
         "status": "사용 가능",
         "tags": [
-          "#시험감독 #시험감독배정 #교사업무 #교무업무 #교육과정 #교사업무경감 #구글시트 #앱스크립트 #에듀테크 #교사자료공유"
+          "시험감독 #시험감독배정 #교사업무 #교무업무 #교육과정 #교사업무경감 #구글시트 #앱스크립트 #에듀테크 #교사자료공유"
         ],
         "screenshots": [
           "assets/uploads/c82f15bfdd35716f66f4fe11a2cdc4afe716aefc07f15aada088c4dcb77cc6c0.webp"
@@ -590,7 +590,7 @@
         "thumbnail": "assets/uploads/c82f15bfdd35716f66f4fe11a2cdc4afe716aefc07f15aada088c4dcb77cc6c0.webp",
         "status": "사용 가능",
         "tags": [
-          "#시험감독 #시험감독배정 #교사업무 #교무업무 #교육과정 #교사업무경감 #구글시트 #앱스크립트 #에듀테크 #교사자료공유"
+          "시험감독 #시험감독배정 #교사업무 #교무업무 #교육과정 #교사업무경감 #구글시트 #앱스크립트 #에듀테크 #교사자료공유"
         ],
         "screenshots": [
           "assets/uploads/c82f15bfdd35716f66f4fe11a2cdc4afe716aefc07f15aada088c4dcb77cc6c0.webp"
@@ -1008,6 +1008,10 @@
   },
   "history": [
     {
+      "id": "d2e60952-8297-440e-a303-81a6bbdd32d1",
+      "createdAt": "2026-10-20T14:03:49+00:00"
+    },
+    {
       "id": "acac2769-79c7-483b-b782-8d70ea29f323",
       "createdAt": "2026-10-20T13:44:46+00:00"
     },
@@ -1040,5 +1044,5 @@
       "createdAt": "2026-10-20T13:21:52+00:00"
     }
   ],
-  "updatedAt": "2026-10-20T13:44:48+00:00"
+  "updatedAt": "2026-10-20T14:03:51+00:00"
 }
