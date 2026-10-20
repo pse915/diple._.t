@@ -15,7 +15,6 @@ from PIL import Image, UnidentifiedImageError
 from catalog import load_payload, local_image
 from .github_store import GitHubRepo, json_bytes
 from .model import initial_document, normalize_document, text, image_path
-from .mail import ResendMailer, MailFailure, email_address
 from .security import UserError, require_admin, authenticated, verify_password, LIMITER
 
 
@@ -29,8 +28,6 @@ class Settings:
     private_branch:str="main"
     cms_path:str="data/cms.json"
     image_prefix:str="assets/uploads"
-    resend_api_key:str=""
-    mail_from:str=""
     timeout:int=1800
 
     @classmethod
@@ -38,7 +35,7 @@ class Settings:
         def s(k,default=""):
             v=value.get(k,default)
             return str(v).strip()
-        settings=cls(s("GITHUB_TOKEN"),s("ADMIN_PASSWORD_HASH"),s("PUBLIC_REPO"),s("PUBLIC_BRANCH","main"),s("PRIVATE_REPO"),s("PRIVATE_BRANCH","main"),s("CMS_PATH","data/cms.json"),s("IMAGE_PREFIX","assets/uploads"),s("RESEND_API_KEY"),s("MAIL_FROM"),max(60,min(86400,int(value.get("ADMIN_TIMEOUT_SECONDS",1800)))))
+        settings=cls(s("GITHUB_TOKEN"),s("ADMIN_PASSWORD_HASH"),s("PUBLIC_REPO"),s("PUBLIC_BRANCH","main"),s("PRIVATE_REPO"),s("PRIVATE_BRANCH","main"),s("CMS_PATH","data/cms.json"),s("IMAGE_PREFIX","assets/uploads"),max(60,min(86400,int(value.get("ADMIN_TIMEOUT_SECONDS",1800)))))
         for p in [settings.cms_path,settings.image_prefix]:
             GitHubRepo.path(p)
         if not settings.cms_path.startswith("data/") or not settings.image_prefix.startswith("assets/"):
@@ -60,11 +57,10 @@ def request_id(value):
 
 
 class Service:
-    def __init__(self,settings:Settings,root:Path,public=None,private=None,mailer=None):
+    def __init__(self,settings:Settings,root:Path,public=None,private=None):
         self.settings,self.root=settings,root
         self.public=public or (GitHubRepo(settings.public_repo,settings.public_branch,settings.token) if settings.public_repo else None)
         self.private_repo=private or (GitHubRepo(settings.private_repo,settings.private_branch,settings.token) if settings.private_repo else None)
-        self.mailer=mailer or ResendMailer(settings.resend_api_key,settings.mail_from)
         self.initial=initial_document(root)
         self.base_payload=load_payload(root)
         self.lock=RLock()
@@ -263,12 +259,10 @@ class Service:
                 LIMITER.check("submit:"+client_key,10,600)
             title=text(event.get("title",""),150);content=text(event.get("content",""),5000)
             if not title or not content:raise UserError("제목과 내용을 입력하세요.")
-            email=email_address(event.get("email"))
-            if event.get("emailConsent") is not True:raise UserError("이메일 사용 안내를 확인하고 동의해 주세요.")
             app_id=text(event.get("appId",""),80)
             app=next((a for a in self.public_payload()["apps"] if a["id"]==app_id),None)
             if app_id and not app:raise UserError("관련 앱을 확인하세요.")
-            record={"email":email,"emailConsentAt":now_iso(),"replySchema":2,"internalNote":"","mailStatus":"not_sent","id":rid,"requestId":rid,"appId":app_id,"appTitle":app["title"] if app else "전체 질문","authorNickname":text(event.get("nickname",""),60),"title":title,"content":content,"createdAt":now_iso(),"status":"미확인","adminReply":"","repliedAt":""}
+            record={"id":rid,"requestId":rid,"appId":app_id,"appTitle":app["title"] if app else "전체 질문","authorNickname":text(event.get("nickname",""),60),"title":title,"content":content,"createdAt":now_iso(),"status":"미확인","adminReply":"","repliedAt":""}
             index_raw=repo.read("questions/index.json",head)
             index=json.loads(index_raw) if index_raw else []
             if len(index)>=500:raise UserError("질문 보관함이 가득 찼습니다. 관리자에게 다른 경로로 문의하세요.")
@@ -293,123 +287,30 @@ class Service:
         repo=self.private_store();head=repo.head();qid=request_id(event.get("questionId"))
         raw=repo.read("questions/messages/"+qid+".json",head)
         if not raw:raise UserError("질문을 찾을 수 없습니다.")
-        return {"question":self.question_view(json.loads(raw)),"privateHead":head}
-
-    @staticmethod
-    def question_view(record):
-        record=copy.deepcopy(record)
-        # v1 replies were private memos. Never silently turn them into outgoing mail.
-        if record.get("replySchema")!=2:
-            record["internalNote"]=record.get("adminReply","")
-            record["adminReply"]=""
-            record["mailStatus"]="legacy_no_email"
-        record.setdefault("email","")
-        record.setdefault("internalNote","")
-        return record
-
-    def question_result(self,repo,qid,message):
-        head=repo.head();raw=repo.read("questions/messages/"+qid+".json",head)
-        return {"message":message,"question":self.question_view(json.loads(raw)) if raw else None,"privateHead":head}
+        return {"question":json.loads(raw),"privateHead":head}
 
     def question_save(self,session,event):
         require_admin(session,self.settings.timeout)
         repo=self.private_store();head=repo.head();rid=request_id(event.get("id"));qid=request_id(event.get("questionId"))
         marker="questions/operations/"+rid+".json"
-        prior=repo.read(marker,head)
-        if prior:
-            job=json.loads(prior).get("mailJobId")
-            message=self.deliver_reply(session,qid,job) if job else "이미 저장했습니다."
-            return self.question_result(repo,qid,message)
-        if event.get("privateHead")!=head:raise UserError("질문이 변경되었습니다. 입력은 유지됩니다. 최신 글을 다시 불러온 뒤 수정하세요.")
+        if repo.read(marker,head):return {"message":"이미 반영된 요청입니다."}
+        if event.get("privateHead")!=head:raise UserError("질문이 변경되었습니다. 다시 불러온 뒤 수정하세요.")
         raw=repo.read("questions/messages/"+qid+".json",head)
         if not raw:raise UserError("질문을 찾을 수 없습니다.")
-        record=self.question_view(json.loads(raw));index_raw=repo.read("questions/index.json",head);index=json.loads(index_raw) if index_raw else []
-        path="questions/messages/"+qid+".json";job_id=None
-        operation=event.get("operation")
-        if operation=="delete":
+        record=json.loads(raw);index_raw=repo.read("questions/index.json",head);index=json.loads(index_raw) if index_raw else []
+        path="questions/messages/"+qid+".json"
+        if event.get("operation")=="delete":
             files={path:None};index=[x for x in index if x["id"]!=qid]
-            for p in repo.list_files("questions/outbox",head):
-                job=json.loads(repo.read(p,head))
-                if job.get("questionId")==qid:files[p]=None
-        elif operation=="update":
+        else:
             status=event.get("status")
             if status not in ["미확인","확인","답변 완료"]:raise UserError("질문 상태를 확인하세요.")
-            reply=text(event.get("reply",""),5000)
-            if record.get("mailJobId") and reply!=record.get("adminReply",""):
-                old_raw=repo.read("questions/outbox/"+record["mailJobId"]+".json",head)
-                if old_raw and json.loads(old_raw).get("status")!="accepted":
-                    raise UserError("이전 답변의 발송 결과를 먼저 확인하세요. 재시도 또는 메일 서비스 로그 확인 후 수정할 수 있습니다.")
-            changed=bool(reply and reply!=record.get("adminReply",""))
-            record.update({"replySchema":2,"status":status,"adminReply":reply,"internalNote":text(event.get("internalNote",record.get("internalNote","")),5000)})
-            if changed:
-                record["repliedAt"]=now_iso()
-                if record.get("email"):
-                    email_address(record["email"])
-                    if not self.mailer.configured:
-                        raise UserError("이메일 발송 Secrets를 먼저 설정하세요. 답변 입력은 유지됩니다.")
-                    job_id=rid
-                    job={"id":job_id,"questionId":qid,"status":"pending","createdAt":now_iso(),"firstAttemptAt":0,"payload":self.mailer.payload(record,reply)}
-                    record.update({"mailJobId":job_id,"mailStatus":"pending"})
-                else:
-                    record["mailStatus"]="legacy_no_email"
+            record.update({"status":status,"adminReply":text(event.get("reply",""),5000),"repliedAt":now_iso()})
             files={path:json_bytes(record)}
-            if job_id:files["questions/outbox/"+job_id+".json"]=json_bytes(job)
             index=[{**x,"status":status} if x["id"]==qid else x for x in index]
-        else:raise UserError("질문 관리 작업을 확인하세요.")
-        files.update({"questions/index.json":json_bytes(index),marker:json_bytes({"requestId":rid,"mailJobId":job_id})})
+        files.update({"questions/index.json":json_bytes(index),marker:json_bytes({"requestId":rid})})
         repo.commit(files,head,"Private question update "+rid)
-        message=self.deliver_reply(session,qid,job_id) if job_id else "질문 관리를 저장했습니다."
-        if operation=="update" and record.get("mailStatus")=="legacy_no_email":message="답변을 저장했습니다. 기존 글에 이메일이 없어 발송하지 않았습니다."
-        return self.question_result(repo,qid,message)
+        return {"message":"질문 관리를 저장했습니다."}
 
-    def deliver_reply(self,session,qid,job_id):
-        require_admin(session,self.settings.timeout)
-        repo=self.private_store();job_path="questions/outbox/"+request_id(job_id)+".json"
-        head=repo.head();raw=repo.read(job_path,head);record_path="questions/messages/"+qid+".json"
-        record_raw=repo.read(record_path,head)
-        if not raw or not record_raw:raise UserError("발송 대기 글을 찾을 수 없습니다.")
-        job=json.loads(raw);record=json.loads(record_raw)
-        if job.get("questionId")!=qid or record.get("mailJobId")!=job_id:raise UserError("현재 답변의 발송 요청이 아닙니다.")
-        if job["status"]=="accepted":return "답변을 저장했습니다. 이메일 발송 요청은 이미 접수되었습니다."
-        # Provider idempotency lasts 24 hours; never blindly replay an ambiguous send after that window.
-        first=job.get("firstAttemptAt",0)
-        if first and time.time()-first>=23*3600:
-            return "답변은 저장되어 있습니다. 재시도 안전 시간이 지나 자동 재발송을 중단했습니다. 메일 서비스 로그를 확인하세요."
-        if not self.mailer.configured:return "답변은 저장되어 있습니다. 메일 Secrets 설정 후 발송 재시도를 누르세요."
-        job.update({"status":"sending","firstAttemptAt":first or time.time()})
-        record["mailStatus"]="sending"
-        repo.commit({job_path:json_bytes(job),record_path:json_bytes(record)},head,"Claim reply mail "+job_id)
-        try:
-            provider_id=self.mailer.send(job["payload"],job_id)
-            job.update({"status":"accepted","providerId":provider_id,"acceptedAt":now_iso(),"error":""})
-            message="답변을 저장했습니다. 이메일 발송 요청이 접수되었습니다. 수신함 도착은 메일 서비스에서 확인하세요."
-        except MailFailure as exc:
-            job.update({"status":"unknown" if exc.uncertain else "failed","error":str(exc)})
-            message="답변은 저장했습니다. 이메일 "+("발송 결과 확인이 필요합니다. " if exc.uncertain else "발송에 실패했습니다. ")+str(exc)
-        # Merge delivery status into latest record without overwriting a concurrent admin edit.
-        for attempt in range(3):
-            try:
-                repo=self.private_store();head=repo.head();current_raw=repo.read(record_path,head)
-                if not current_raw:return message
-                current=json.loads(current_raw)
-                files={job_path:json_bytes(job)}
-                if current.get("mailJobId")==job_id:
-                    current.update({"mailStatus":job["status"],"mailAcceptedAt":job.get("acceptedAt",""),"mailError":job.get("error","")})
-                    files[record_path]=json_bytes(current)
-                repo.commit(files,head,"Record reply mail result "+job_id)
-                return message
-            except UserError:
-                if attempt==2:return message+" 발송 결과의 GitHub 기록이 지연되었습니다. 같은 발송 요청으로 확인하세요."
-        return message
-
-    def question_mail_retry(self,session,event):
-        require_admin(session,self.settings.timeout)
-        repo=self.private_store();qid=request_id(event.get("questionId"));head=repo.head()
-        raw=repo.read("questions/messages/"+qid+".json",head)
-        if not raw:raise UserError("질문을 찾을 수 없습니다.")
-        record=json.loads(raw);job_id=record.get("mailJobId")
-        if not job_id:raise UserError("이 글에는 발송할 이메일 답변이 없습니다.")
-        return self.question_result(repo,qid,self.deliver_reply(session,qid,job_id))
     def dispatch(self,session,event,client_key="session"):
         if not isinstance(event,dict):raise UserError("요청 형식을 확인하세요.")
         action=event.get("action")
@@ -435,7 +336,6 @@ class Service:
         if action=="questions_list":return self.questions(session)
         if action=="question_detail":return self.question_detail(session,event)
         if action=="question_save":return self.question_save(session,event)
-        if action=="question_mail_retry":return self.question_mail_retry(session,event)
         if action=="refresh":
             with self.lock:self.public_cache=None
             return {"message":"최신 게시 정보를 확인했습니다."}
