@@ -1,0 +1,1 @@
+PASS: stopped and restarted the Streamlit test fixture process using the same disk-backed repository emulator. A new browser session loaded the identical 7 published app names. This is not a real GitHub persistence test.

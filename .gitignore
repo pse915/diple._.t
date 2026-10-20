@@ -1,0 +1,7 @@
+node_modules/
+__pycache__/
+.pytest_cache/
+.streamlit/secrets.toml
+frontend/test-results/
+frontend/playwright-report/
+*.log

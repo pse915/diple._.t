@@ -1,0 +1,34 @@
+test_all_admin_requests_denied_without_authentication (test_admin.AdministrationTests.test_all_admin_requests_denied_without_authentication) ... ok
+test_concurrent_edits_and_duplicate_commit (test_admin.AdministrationTests.test_concurrent_edits_and_duplicate_commit) ... ok
+test_draft_is_not_public_then_publish_and_restore (test_admin.AdministrationTests.test_draft_is_not_public_then_publish_and_restore) ... ok
+test_failure_preserves_previous_publication (test_admin.AdministrationTests.test_failure_preserves_previous_publication) ... ok
+test_fake_image_and_unsafe_link_rejected_without_write (test_admin.AdministrationTests.test_fake_image_and_unsafe_link_rejected_without_write) ... ok
+test_fixed_server_paths (test_admin.AdministrationTests.test_fixed_server_paths) ... ok
+test_hiding_examples_trash_and_section_order (test_admin.AdministrationTests.test_hiding_examples_trash_and_section_order) ... ok
+test_image_upload_and_json_in_same_commit (test_admin.AdministrationTests.test_image_upload_and_json_in_same_commit) ... ok
+test_password_and_login_throttling (test_admin.AdministrationTests.test_password_and_login_throttling) ... ok
+test_private_reply_delete_and_conflict (test_admin.AdministrationTests.test_private_reply_delete_and_conflict) ... ok
+test_private_repository_must_remain_private_and_app_is_valid (test_admin.AdministrationTests.test_private_repository_must_remain_private_and_app_is_valid) ... ok
+test_repository_survives_new_service_and_disk_reload (test_admin.AdministrationTests.test_repository_survives_new_service_and_disk_reload) ... ok
+test_secret_content_never_enters_public_repository_or_payload (test_admin.AdministrationTests.test_secret_content_never_enters_public_repository_or_payload) ... ok
+test_secret_duplicate_and_rate_limit (test_admin.AdministrationTests.test_secret_duplicate_and_rate_limit) ... ok
+test_sessions_expire_and_logout_scrubs_private_state (test_admin.AdministrationTests.test_sessions_expire_and_logout_scrubs_private_state) ... ok
+test_successful_commit_with_lost_response_is_idempotent (test_admin.AdministrationTests.test_successful_commit_with_lost_response_is_idempotent) ... ok
+test_asset_boundary_and_missing_file (test_catalog.CatalogTests.test_asset_boundary_and_missing_file) ... ok
+test_comment_configuration_failure_isolated (test_catalog.CatalogTests.test_comment_configuration_failure_isolated) ... ok
+test_duplicate_or_invalid_id_and_missing_title (test_catalog.CatalogTests.test_duplicate_or_invalid_id_and_missing_title) ... ok
+test_invalid_json_type (test_catalog.CatalogTests.test_invalid_json_type) ... ok
+test_optional_values_and_bad_date (test_catalog.CatalogTests.test_optional_values_and_bad_date) ... ok
+test_real_payload (test_catalog.CatalogTests.test_real_payload) ... ok
+test_unsafe_app_link_removed (test_catalog.CatalogTests.test_unsafe_app_link_removed) ... ok
+test_url_protocol_and_credentials (test_catalog.CatalogTests.test_url_protocol_and_credentials) ... ok
+test_atomic_tree_commit_preserves_binary_and_json (test_github_adapter.GitHubAdapterTests.test_atomic_tree_commit_preserves_binary_and_json) ... ok
+test_private_metadata_and_missing_file (test_github_adapter.GitHubAdapterTests.test_private_metadata_and_missing_file) ... ok
+test_reference_race_does_not_publish_partial_files (test_github_adapter.GitHubAdapterTests.test_reference_race_does_not_publish_partial_files) ... ok
+test_token_errors_and_redirects_do_not_expose_credentials (test_github_adapter.GitHubAdapterTests.test_token_errors_and_redirects_do_not_expose_credentials) ... ok
+test_wrong_expected_head_prevents_blob_writes (test_github_adapter.GitHubAdapterTests.test_wrong_expected_head_prevents_blob_writes) ... ok
+
+----------------------------------------------------------------------
+Ran 29 tests in 1.533s
+
+OK

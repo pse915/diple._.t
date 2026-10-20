@@ -1,0 +1,19 @@
+{
+  "repository": "pse915/diple._.t",
+  "commit": "b33f0bf6669b2f3fcd61cf491bab07d92155548d",
+  "site": "https://diplet.streamlit.app",
+  "deploymentLinkVerified": false,
+  "checkedFiles": [
+    "app.py",
+    "catalog.py",
+    "config/site.json",
+    "data/apps.json",
+    "config/giscus.json",
+    "frontend/src/index.tsx",
+    "frontend/src/styles.css",
+    "frontend/src/types.ts",
+    "frontend/src/logic.ts",
+    "frontend/package.json",
+    "requirements.txt"
+  ]
+}

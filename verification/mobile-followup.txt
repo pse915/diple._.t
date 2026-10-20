@@ -1,0 +1,1 @@
+PASS: targeted Chromium mobile manager test after CSS row-height correction. Verified no horizontal overflow and first item row height >= 70px. 1 passed (1.8s).

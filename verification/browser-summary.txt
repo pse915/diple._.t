@@ -1,0 +1,17 @@
+PASS private submission, server auth, session separation, admin reply and logout
+PASS app editor: upload, server validation, draft isolation, preview, publish, delete and restore
+PASS section creation, reordering, preview, cancellation guard and historical recovery
+PASS mobile manager and question board screenshots
+PASS real server inactivity expiry clears administrator interface
+PASS sorting and link protocol checks
+PASS homepage, category shortcut and actual images
+PASS search, category, tag, empty state and reset
+PASS detail URL, reload, browser back/forward and unknown ID
+PASS gallery closes by button, Escape and backdrop; focus returns
+PASS theme persists, missing URLs hidden, profile and guestbook
+PASS repeated transitions have no duplicate widgets or browser errors
+PASS mobile and tablet layouts have correct columns and no horizontal overflow
+PASS broken image falls back without breaking navigation
+PASS screenshots of desktop, detail, mobile and tablet
+PASS configured giscus separates app terms and guestbook (mock widget)
+PASS giscus unavailable: timeout and retry leave navigation working

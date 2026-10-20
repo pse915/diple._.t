@@ -1,0 +1,1 @@
+PASS: clean ZIP extraction, Streamlit launch, homepage, manager settings-required state, and question board rendering. No node_modules or Node development server present in extracted project.

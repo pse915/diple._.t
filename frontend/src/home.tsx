@@ -1,0 +1,21 @@
+import React from 'react';
+import type {CatalogApp,Section,Site} from './types';
+import {Icon,Preview,AppCard} from './ui';
+import {selectApps} from './logic';
+
+export function Home({site,apps,sections,onView,onApp,onCategory}:{site:Site;apps:CatalogApp[];sections:Section[];onView:(v:string)=>void;onApp:(id:string)=>void;onCategory:(c:string)=>void}){
+  const hero=site.hero;
+  const appList=(s:Section)=>{
+    const list=selectApps(apps,'','전체','',s.type==='featured'?'featured':'recent').filter(a=>s.type!=='featured'||a.featured).slice(0,s.count);
+    if(!list.length)return <p className="empty">공개된 앱을 준비하고 있습니다.</p>;
+    return s.layout==='grid'?<div className={`app-grid columns-${s.columns}`}>{list.map(a=><AppCard key={a.id} app={a} onOpen={onApp}/>)}</div>:<div className="recent-list">{list.map((a,i)=><button key={a.id} onClick={()=>onApp(a.id)}><span className="recent-num">{String(i+1).padStart(2,'0')}</span><Preview src={a.thumbnail} alt={`${a.title} 미리보기`}/><div><small>{a.category}{a.isExample&&a.showExampleBadge!==false?' · 예시':''}</small><b>{a.title}</b><p>{a.summary}</p></div><time>{a.updatedAt||'날짜 미입력'}</time><Icon name="arrow"/></button>)}</div>;
+  };
+  const cats=site.categoryItems?.filter(c=>c.visible)||site.categories.map(name=>({name,icon:'spark',visible:true}));
+  return <>{sections.filter(s=>s.visible).map(s=><div key={s.id} data-section-id={s.id} className="managed-section">{s.isExample&&s.showExampleBadge&&<span className="example-badge">예시 콘텐츠</span>}
+    {s.type==='hero'?<section className={`hero ${!(s.image||hero?.image)&&!hero?.illustration?'no-art':''}`}><div className="hero-copy"><span className="eyebrow"><i/>{s.eyebrow}</span><h1>{(hero?.title||s.title).split('\n').map((line,i)=><span key={i} style={{display:'block',color:i?'var(--accent)':'var(--ink)'}}>{line}</span>)}</h1><p>{s.body||site.tagline}</p>{hero?.buttonLabel&&<button className="btn primary" onClick={()=>onView(hero.buttonView)}>{hero.buttonLabel}<Icon name="arrow" size={17}/></button>}<div className="hero-caption"><span className="tiny-avatar">T</span>{site.profile.name}의 디지털 작업실</div></div>{(s.image||hero?.image)?<Preview className="hero-custom-image" src={s.image||hero?.image||''} alt="메인 소개 이미지"/>:hero?.illustration?<div className="hero-art" aria-label="아이디어를 도구로 만드는 공방 일러스트" role="img"><div className="art-orbit orbit-one"/><div className="art-orbit orbit-two"/><span className="art-star">✳</span><div className="mini-note"><span>IDEA NO. 01</span><b style={{whiteSpace:'pre-line'}}>{hero.note}</b><div className="sketch-line"/><small>made for our classroom ↗</small></div><div className="mini-app"><span className="mini-dots">● ● ●</span><div className="mini-app-grid"><span/><span/><span/><span/></div><div className="mini-bar"/><small>{hero.caption}</small></div>{hero.sticker&&<span className="art-sticker">MADE WITH<br/><b>{hero.sticker}</b></span>}</div>:null}</section>
+    :s.type==='categories'?<section className="category-section"><div><span className="eyebrow">{s.eyebrow}</span><h2>{s.title}</h2></div><div className="category-row" aria-label="카테고리 바로가기">{cats.map((c,i)=><button key={c.name} onClick={()=>onCategory(c.name)}><span className={`category-circle tone-${i%5}`}><Icon name={c.icon} size={25}/></span><span>{c.name}</span></button>)}</div></section>
+    :s.type==='featured'||s.type==='recent'?<section className="section"><div className="section-head"><div><span className="eyebrow">{s.eyebrow}</span><h2>{s.title}</h2>{s.body&&<p>{s.body}</p>}</div><button className="text-button" onClick={()=>onView('apps')}>전체 앱 보기<Icon name="arrow" size={16}/></button></div>{appList(s)}</section>
+    :s.type==='invite'?<section className="invite"><Icon name="chat" size={35}/><div><h2>{s.title}</h2><p>{s.body}</p></div>{s.buttonLabel&&<button className="btn" onClick={()=>onView(s.buttonView)}>{s.buttonLabel}<Icon name="arrow" size={16}/></button>}</section>
+    :<section className="panel managed-text"><span className="eyebrow">{s.eyebrow}</span><h2>{s.title}</h2><p>{s.body}</p>{s.image&&<Preview src={s.image} alt={s.title+' 이미지'}/ >}{s.buttonLabel&&<button className="btn" onClick={()=>onView(s.buttonView)}>{s.buttonLabel}<Icon name="arrow" size={16}/></button>}</section>}
+  </div>)}</>;
+}

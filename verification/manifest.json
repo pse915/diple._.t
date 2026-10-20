@@ -1,0 +1,330 @@
+{
+  ".gitignore": {
+    "bytes": 123,
+    "sha256": "72fb128ab4ce9f32f81858d10994cf44ea1cc7ab2d8a051a4c9af8d73a583f0e"
+  },
+  ".streamlit/config.toml": {
+    "bytes": 205,
+    "sha256": "820d11c8d19ddc611fb8909b8a5eddb6f3a58edadf4e0d85630f44c4db3fa976"
+  },
+  "ADMIN_MANUAL.md": {
+    "bytes": 6928,
+    "sha256": "512bbcd7690fb77b5bf254c1626744ac1a38b68bf239f83a2501f8497e663325"
+  },
+  "app.py": {
+    "bytes": 3304,
+    "sha256": "ae18bbf098e40f6555ae68d01e0fc1bec0cd06d5efb8d8c33f3b1169b22654b6"
+  },
+  "assets/classroom-notebook-detail.svg": {
+    "bytes": 2646,
+    "sha256": "7261a2045bed278cafe15d8f92a5df070e1794cc40672bc50d485e9eb352f375"
+  },
+  "assets/classroom-notebook.svg": {
+    "bytes": 2646,
+    "sha256": "7261a2045bed278cafe15d8f92a5df070e1794cc40672bc50d485e9eb352f375"
+  },
+  "assets/daily-check-detail.svg": {
+    "bytes": 2646,
+    "sha256": "d35e4123dc240be07cb1f221fb2ac1ca6a0aaabaa6a21e7d2c00e1a8349d6ee9"
+  },
+  "assets/daily-check.svg": {
+    "bytes": 2646,
+    "sha256": "d35e4123dc240be07cb1f221fb2ac1ca6a0aaabaa6a21e7d2c00e1a8349d6ee9"
+  },
+  "assets/future-diary-detail.svg": {
+    "bytes": 2870,
+    "sha256": "a64f89445a38a908d1dbf6c517cdcb87184180f059bbb112c55e7e2839f1841f"
+  },
+  "assets/future-diary.svg": {
+    "bytes": 2870,
+    "sha256": "a64f89445a38a908d1dbf6c517cdcb87184180f059bbb112c55e7e2839f1841f"
+  },
+  "assets/lab-inventory-detail.svg": {
+    "bytes": 2645,
+    "sha256": "92b159bdf391fef36c836b0b0020b562f196395793850e366c3d6b10f079fb9f"
+  },
+  "assets/lab-inventory.svg": {
+    "bytes": 2645,
+    "sha256": "92b159bdf391fef36c836b0b0020b562f196395793850e366c3d6b10f079fb9f"
+  },
+  "assets/lesson-planner-detail.svg": {
+    "bytes": 3211,
+    "sha256": "9322eb40bd1d9005a50ba8950fa9c11efcfff950081068aa8c399d6ccd6bbf5d"
+  },
+  "assets/lesson-planner.svg": {
+    "bytes": 3211,
+    "sha256": "8f8c0ccb27c786254d886c2a9fd6b38a5102a5bf9e74e9bbfc1bdffe86c57958"
+  },
+  "assets/school-timetable-detail.svg": {
+    "bytes": 3211,
+    "sha256": "aef9f3d2594e4b4a474aedbdf7c3d6a047452523dde0eb12884d9ffeeaceed04"
+  },
+  "assets/school-timetable.svg": {
+    "bytes": 3211,
+    "sha256": "f5e0165fb9c5ed8d590f4f57d9ef7a4b5a8761196aa1319ccdcf4861dde65347"
+  },
+  "backend/__init__.py": {
+    "bytes": 50,
+    "sha256": "cc31446c7004410ff0fafbd04a6b606899904bfa76bc7767e9c3a9433162f6e1"
+  },
+  "backend/github_store.py": {
+    "bytes": 5427,
+    "sha256": "e869c6d31c8ab91b214c43143ebbee81f210be2f85860eb50d0a7974fbf3c780"
+  },
+  "backend/model.py": {
+    "bytes": 9091,
+    "sha256": "503122f5dca1206759100ca45caeeef8a012598f5cc33d3333f219aab9252194"
+  },
+  "backend/security.py": {
+    "bytes": 2369,
+    "sha256": "997bf396c82c9862815f955584ca32a834d2f9c8fef28d6c32a6885753fb979b"
+  },
+  "backend/service.py": {
+    "bytes": 18904,
+    "sha256": "072bb9a414fe708f9edb6bc51069c9fddcbb9cd1c8cff047903d9c657dca6e70"
+  },
+  "catalog.py": {
+    "bytes": 6869,
+    "sha256": "59218b5531a864552ad8fd69c683ff877c59cf93f53161c58d3bd1277ababd82"
+  },
+  "CHANGELOG.md": {
+    "bytes": 930,
+    "sha256": "85d6f5208f37a353a0d24d19d7a0030bb849c03eb64d54dc95382f85bd4b6063"
+  },
+  "config/giscus.example.json": {
+    "bytes": 115,
+    "sha256": "6a699a715d29c68aba405e84c6aee44f6587ae439c0e5b5fef0b1e140530902a"
+  },
+  "config/giscus.json": {
+    "bytes": 115,
+    "sha256": "6a699a715d29c68aba405e84c6aee44f6587ae439c0e5b5fef0b1e140530902a"
+  },
+  "config/layout.json": {
+    "bytes": 2048,
+    "sha256": "7d326321f68e8670d434d150b192454aa2a6f214bb2264a9df7b685ff4c43c2b"
+  },
+  "config/site.json": {
+    "bytes": 2292,
+    "sha256": "4d235e74a020cc6042cc8be445628e8cc7ff8aa822a9692015a402300eb0c574"
+  },
+  "CONTENT_INVENTORY.md": {
+    "bytes": 2643,
+    "sha256": "0544d957b97e827dc8c6565c7acf54f1c73fecd233c1f3d98bb82ec9c62e6df8"
+  },
+  "data/apps.json": {
+    "bytes": 9298,
+    "sha256": "190d339ccb49b5ec07b579f4aa7cc4782cbc320dd395384ec6242d20ec4f747a"
+  },
+  "frontend/build/workshop.js": {
+    "bytes": 442205,
+    "sha256": "7080d0149ada75e324b687175e69abcae083228823d5a4568e2f11f259a1130d"
+  },
+  "frontend/package-lock.json": {
+    "bytes": 43374,
+    "sha256": "24aa3df1fb0cb2d1062f985f5f2da595b93dbb1fe0a4836f655d0aae07bd4b7f"
+  },
+  "frontend/package.json": {
+    "bytes": 511,
+    "sha256": "a64d60d49705c7fb21bb31bfe40146a957bf74eac999a8153cb006f01384eda8"
+  },
+  "frontend/playwright.config.ts": {
+    "bytes": 1278,
+    "sha256": "80eb6d8c00949298a1ec26d728a51441b2e325de5646912a06e6bdd0535f39fc"
+  },
+  "frontend/src/admin.css": {
+    "bytes": 7260,
+    "sha256": "e2c254be40b2eb22141baaab0406f6a65e4c130ba6d249ee967e4f467a05c1e9"
+  },
+  "frontend/src/admin.tsx": {
+    "bytes": 29733,
+    "sha256": "b76ff72d28fd387c9cbf7d45304afe49a8b85faa68b6fbc0a92463aabeb389a5"
+  },
+  "frontend/src/bridge.tsx": {
+    "bytes": 2828,
+    "sha256": "3da41f9107414e19b00d1bb1b319611bba29b70c24c3b67cdc9a6140aae51d07"
+  },
+  "frontend/src/home.tsx": {
+    "bytes": 4413,
+    "sha256": "a71ee1ca874cb14772ae76288072941b58a6a6f140150299a43b5d9f154bf369"
+  },
+  "frontend/src/index.tsx": {
+    "bytes": 19218,
+    "sha256": "8f5af3b65dd7c42463868e1c768fdbc612b9312dc6d407f61f171d4fcdfca98d"
+  },
+  "frontend/src/logic.ts": {
+    "bytes": 1452,
+    "sha256": "ad285f76dd33c7f5c59f816bd7ac98378144476a50cb8ca0f0a00cfd251d31e7"
+  },
+  "frontend/src/private-form.tsx": {
+    "bytes": 2463,
+    "sha256": "0a6039fd4192a273036acb818e810e124461d405e658ccf57a460eed8a0a4297"
+  },
+  "frontend/src/styles.css": {
+    "bytes": 24048,
+    "sha256": "5d3ccc091696702db1f81010c7cf8be62b6c8fdb968c3a718459be6bf1da5b94"
+  },
+  "frontend/src/types.ts": {
+    "bytes": 2289,
+    "sha256": "ea8250394ef976a2b100e1f65a139fbea0db810fcbea760278b630ecb0ac67de"
+  },
+  "frontend/src/ui.tsx": {
+    "bytes": 3917,
+    "sha256": "051f39a5eb97f0801a46ae3bd302a5f1c26e9566682eb7321f76ac04792e4bbb"
+  },
+  "frontend/tests/admin.spec.ts": {
+    "bytes": 9896,
+    "sha256": "6361f9f2efdcf4fc1cc1a49ce4c8d6c6c20462b2c883d7e070064c970a98d43f"
+  },
+  "frontend/tests/workshop.spec.ts": {
+    "bytes": 10539,
+    "sha256": "a7856a9d69d75c8d20a2f68a7c9a8d4e92262c49494d3219072dd75a548f00af"
+  },
+  "frontend/tsconfig.json": {
+    "bytes": 331,
+    "sha256": "370ce15ce5e5a2c26bad3cebe7cac73f013c07996a56e69bfed12cd74ea48b79"
+  },
+  "frontend/vite.config.js": {
+    "bytes": 380,
+    "sha256": "61a90e2be9122f7f8f3776a777b26867688c4101ecdd7f84c365b56468cfd359"
+  },
+  "KNOWN_LIMITATIONS.md": {
+    "bytes": 2592,
+    "sha256": "a71816617653a291b2f72d6289ac01ce2a0ab424e82ae91dd20900c755940bc9"
+  },
+  "LICENSE": {
+    "bytes": 1081,
+    "sha256": "b88ab2eecceb274da899c32dadafa1ceb0d4301f9c76ef0cf6b45a081e6f2ad5"
+  },
+  "README.md": {
+    "bytes": 13105,
+    "sha256": "f217714896759b658acb2b06a970f90ff3f7a0bdcdfe3e358dd5bc16949a8b73"
+  },
+  "REFERENCE_UI.md": {
+    "bytes": 3241,
+    "sha256": "0d9f0e6a29c582949482303d8dcffe408ccf694c39f9bc951c8385a77db7d194"
+  },
+  "requirements.txt": {
+    "bytes": 50,
+    "sha256": "d02eef4462abb66ab5cb1c85767095f6f3f5c2ce0b37076d2106ab344423a027"
+  },
+  "screenshots/01-admin-setup.png": {
+    "bytes": 60174,
+    "sha256": "a29507e6e8346a4f4c9043c5a69a7236539bd31bb903cee11f8c1a2da84cf3e1"
+  },
+  "screenshots/01-home-desktop.png": {
+    "bytes": 279261,
+    "sha256": "aedd2893bbd1a3d1915ba545881498f96d3734017d251e4bf67c441d172fd769"
+  },
+  "screenshots/02-admin-editor.png": {
+    "bytes": 110220,
+    "sha256": "e55e66c287fa6fa8528955d4ff5eab74abe293213a7dfb21db7e295740b07f05"
+  },
+  "screenshots/02-detail-desktop.png": {
+    "bytes": 94749,
+    "sha256": "2d42cdd45e2344990a7dd114bb5aa028833c9fa41d4d282cfc0db4c290aea32e"
+  },
+  "screenshots/03-app-editor.png": {
+    "bytes": 85891,
+    "sha256": "93cb7eb54d36e385b930a346af34060c655b7920cf60b3b7028d867c72c29936"
+  },
+  "screenshots/03-home-mobile.png": {
+    "bytes": 117963,
+    "sha256": "6871b47debb69feaed92879e3d5ff88e94fbb75850524a2addaf082db6fc7418"
+  },
+  "screenshots/04-apps-mobile.png": {
+    "bytes": 33543,
+    "sha256": "3d3e51f7e33968dc1c790e3ca2168c689ea0129d541acaffd29e8ae833dc29cd"
+  },
+  "screenshots/04-layout-manager.png": {
+    "bytes": 97572,
+    "sha256": "12d42973542d87ff6875bc88aa201134053545cea45c6a16d7d9c719aa7c55ef"
+  },
+  "screenshots/05-admin-mobile.png": {
+    "bytes": 29594,
+    "sha256": "001314156fb9022ef6300e1a96397a73a4e86bef4d05a1543d65d2af90dc434c"
+  },
+  "screenshots/05-apps-tablet.png": {
+    "bytes": 68162,
+    "sha256": "50e34c927c5db20c6aaa43486a4bd01cd44f10dd68e6892604823b63adfb8831"
+  },
+  "screenshots/06-questions-mobile.png": {
+    "bytes": 31570,
+    "sha256": "389b5a1ea8e7507845ff305acb1ac3c721b375d6a651aa73311c174e5b46000b"
+  },
+  "secrets.example.toml": {
+    "bytes": 310,
+    "sha256": "9cf3979b51f9e122f1f9527198efd054155cc0c28c873218d79230f0a8aa8371"
+  },
+  "TEST_RESULTS.md": {
+    "bytes": 4184,
+    "sha256": "fb4f0d4cb71329306f157535c5deeb3c9194e79c9a0f60aaea68f0051633e01b"
+  },
+  "tests/admin_fixture.py": {
+    "bytes": 1093,
+    "sha256": "d76bd30bfd385aa4105f1812afaad42390b967fe8be875b8b679bd8a82df786d"
+  },
+  "tests/fake_repo.py": {
+    "bytes": 2120,
+    "sha256": "94b6d5c87a451324a20db16078fd93dcafb89a5d7f2dc96c2ef5c9e4ded886ec"
+  },
+  "tests/fixture_app.py": {
+    "bytes": 953,
+    "sha256": "f27c672ec8f5e5c4686bb35301de4ca8ba3d2691986605df9fc4d6ac6bb4823b"
+  },
+  "tests/test_admin.py": {
+    "bytes": 10839,
+    "sha256": "4272c15ceffedb8f432bde816dd47abccfeb62a99c33abc4021bb3ceeda2c654"
+  },
+  "tests/test_catalog.py": {
+    "bytes": 3118,
+    "sha256": "33b970cae4976c7531f1719dc1a5bc755ad8d2960cf775447de2a3fe0128df3a"
+  },
+  "tests/test_github_adapter.py": {
+    "bytes": 3835,
+    "sha256": "d8542f4a22f8ddf56fa132ae489f2afbd0e48de0367cc37bc04b73f67cc61a5c"
+  },
+  "THIRD_PARTY_LICENSES.md": {
+    "bytes": 206147,
+    "sha256": "d9f14e1a15042b18ae815bc81adc816c6ecf4d3a3d7040483692eadc6683520f"
+  },
+  "tools/create_examples.py": {
+    "bytes": 6553,
+    "sha256": "65005e53540731550c88b72e4ca5411fc701aed5eb5ee56d46ea97f6f1cf5930"
+  },
+  "tools/hash_admin_password.py": {
+    "bytes": 489,
+    "sha256": "54e4505e349c63744ca84b06b637d37b5861de37148c75bf1ea6af6ef1c887bb"
+  },
+  "tools/package_project.py": {
+    "bytes": 1526,
+    "sha256": "3447248917ef957f17113792777aaeb33588b0d10c3013cbc5f1572194a275ea"
+  },
+  "verification/browser-results.json": {
+    "bytes": 19713,
+    "sha256": "0641f23dbdd68fc238a19a9d733e862659fa1a0b4c6ca57d19b2861e1f398e8e"
+  },
+  "verification/browser-summary.txt": {
+    "bytes": 1113,
+    "sha256": "5dfc412285bd8cac3fb142cf4c8035a3b7c1cf87b65667519d336c141dcd49e1"
+  },
+  "verification/mobile-followup.txt": {
+    "bytes": 161,
+    "sha256": "154efc1356c531269d9580f050ec5c4e8cbf2b0c2f02da023693d164ce442c0e"
+  },
+  "verification/mock-restart.txt": {
+    "bytes": 221,
+    "sha256": "9598cebfd7d93b1cd319938ebf5b92c2849ac61cdb956a2ef3f9c7e2c3ec5b59"
+  },
+  "verification/python-tests.txt": {
+    "bytes": 3819,
+    "sha256": "6cd20b1c37669ff76469bc9f6f9fe6fe0a256612768835f6f14eacbe9d3b489c"
+  },
+  "verification/source.json": {
+    "bytes": 471,
+    "sha256": "4136434cf009933cfeea1821ef15734265a04ea23f9e29fa7b7c7f4f957cb5b6"
+  },
+  "verification/zip-smoke.txt": {
+    "bytes": 192,
+    "sha256": "364064c2bb39071b120834f61caea5e85443402eed8eb5699a3059e1b28afa42"
+  }
+}
