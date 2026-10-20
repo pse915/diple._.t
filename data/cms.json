@@ -80,6 +80,34 @@
     },
     "apps": [
       {
+        "id": "testauto",
+        "title": "시험시간표 제작프로그램",
+        "summary": "시험기간 시간표를 제작할 수 있습니다.",
+        "description": "시험기간 시간표를 제작할 수 있습니다. \n담임학반 제외, 시험치는 교과목 교사 제외\n강사, 교사 추가, 교사 제외,\n시간표 입력시 제외, 정, 부, 자습감독의 편성, 배치,\n자동 초안 제작, \n시험 해당 학년 교과수업에 많이 들어가는 사람 우선배치 등\n주로 사용되는 해당 규칙들이 들어가 있습니다.\n\n이 앱은 학급당 2명(정, 부감독)을 기준으로 제작하였습니다.",
+        "thumbnail": "assets/uploads/c82f15bfdd35716f66f4fe11a2cdc4afe716aefc07f15aada088c4dcb77cc6c0.webp",
+        "status": "사용 가능",
+        "tags": [],
+        "screenshots": [
+          "assets/uploads/c82f15bfdd35716f66f4fe11a2cdc4afe716aefc07f15aada088c4dcb77cc6c0.webp"
+        ],
+        "features": [],
+        "targetUsers": [],
+        "supportedDevices": [],
+        "useCases": [],
+        "instructions": [],
+        "changelog": [],
+        "category": "교무 업무",
+        "featured": true,
+        "isExample": false,
+        "sortOrder": 1,
+        "appUrl": "https://docs.google.com/spreadsheets/d/195l4b453SO2AHFNlSdhUaGkdt70Yi5lZ-R88T7qJvxg/copy",
+        "githubUrl": "",
+        "guideUrl": "https://docs.google.com/spreadsheets/d/195l4b453SO2AHFNlSdhUaGkdt70Yi5lZ-R88T7qJvxg/edit?gid=1258942548#gid=1258942548",
+        "updatedAt": "2026-10-20",
+        "visible": true,
+        "showExampleBadge": false
+      },
+      {
         "id": "classroom-notebook",
         "title": "수업 기록 노트",
         "summary": "학생의 생각과 배움의 과정을 한곳에 모으는 포트폴리오.",
@@ -121,7 +149,7 @@
         "category": "수업 도구",
         "featured": true,
         "isExample": true,
-        "sortOrder": 1,
+        "sortOrder": 2,
         "appUrl": "",
         "githubUrl": "",
         "guideUrl": "",
@@ -170,7 +198,7 @@
         "category": "교무 업무",
         "featured": true,
         "isExample": true,
-        "sortOrder": 2,
+        "sortOrder": 3,
         "appUrl": "",
         "githubUrl": "",
         "guideUrl": "",
@@ -220,7 +248,7 @@
         "category": "교육용 게임",
         "featured": true,
         "isExample": true,
-        "sortOrder": 3,
+        "sortOrder": 4,
         "appUrl": "",
         "githubUrl": "",
         "guideUrl": "",
@@ -269,7 +297,7 @@
         "category": "교무 업무",
         "featured": false,
         "isExample": true,
-        "sortOrder": 4,
+        "sortOrder": 5,
         "appUrl": "",
         "githubUrl": "",
         "guideUrl": "",
@@ -319,7 +347,7 @@
         "category": "수업 도구",
         "featured": false,
         "isExample": true,
-        "sortOrder": 5,
+        "sortOrder": 6,
         "appUrl": "",
         "githubUrl": "",
         "guideUrl": "",
@@ -368,7 +396,7 @@
         "category": "생활 편의",
         "featured": false,
         "isExample": true,
-        "sortOrder": 6,
+        "sortOrder": 7,
         "appUrl": "",
         "githubUrl": "",
         "guideUrl": "",
@@ -952,6 +980,10 @@
   },
   "history": [
     {
+      "id": "1e371206-9a62-4cf7-a0f6-38ba58dfe8a9",
+      "createdAt": "2026-10-20T13:35:35+00:00"
+    },
+    {
       "id": "6412fb49-d02f-4211-93f7-8a6118c57b55",
       "createdAt": "2026-10-20T13:26:03+00:00"
     },
@@ -960,5 +992,5 @@
       "createdAt": "2026-10-20T13:21:52+00:00"
     }
   ],
-  "updatedAt": "2026-10-20T13:35:24+00:00"
+  "updatedAt": "2026-10-20T13:35:38+00:00"
 }
