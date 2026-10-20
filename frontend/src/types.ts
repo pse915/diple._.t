@@ -13,7 +13,7 @@ export type Site={title:string;tagline:string;brand:string;brandMark?:string;top
   profile:{name:string;role:string;bio:string;image?:string;visible?:boolean;heading?:string;showPrinciples?:boolean;showInvite?:boolean;inviteTitle?:string;inviteBody?:string;buttonLabel?:string;principles:string[];links:{label:string;url:string}[]}};
 export type CMSDocument={site:Site;apps:CatalogApp[];sections:Section[];trash:{kind:'app'|'section';value:CatalogApp|Section}[]};
 export type AdminSnapshot={head:string;document:CMSDocument;history:{id:string;createdAt:string}[];images:Record<string,string>};
-export type Question={id:string;appId:string;appTitle:string;authorNickname:string;title:string;content:string;createdAt:string;status:string;adminReply?:string;repliedAt?:string};
+export type Question={id:string;appId:string;appTitle:string;authorNickname:string;title:string;content:string;createdAt:string;status:string;adminReply?:string;internalNote?:string;email?:string;mailStatus?:string;mailError?:string;mailJobId?:string;repliedAt?:string};
 export type Payload = {
   site: Site;
   apps:CatalogApp[]; warnings:string[];
