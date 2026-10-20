@@ -8,7 +8,7 @@
       "tagline": "수업과 학교 업무를 더 편리하게 만드는 앱을 만듭니다.",
       "footer": "작은 아이디어가 더 나은 학교의 일상이 되도록.",
       "topNote": "아이디어를 나눕니다",
-      "footerVisible": true,
+      "footerVisible": false,
       "categoryItems": [
         {
           "name": "수업 도구",
@@ -516,7 +516,7 @@
       "tagline": "수업과 학교 업무를 더 편리하게 만드는 앱을 만듭니다.",
       "footer": "작은 아이디어가 더 나은 학교의 일상이 되도록.",
       "topNote": "아이디어를 나눕니다",
-      "footerVisible": true,
+      "footerVisible": false,
       "categoryItems": [
         {
           "name": "수업 도구",
@@ -1018,6 +1018,10 @@
   },
   "history": [
     {
+      "id": "297fb240-febf-452c-bc60-5060af9adb6d",
+      "createdAt": "2026-10-20T14:21:07+00:00"
+    },
+    {
       "id": "94432ffc-0cb2-4b10-b5e4-d7781af7213d",
       "createdAt": "2026-10-20T14:11:47+00:00"
     },
@@ -1066,5 +1070,5 @@
       "createdAt": "2026-10-20T13:21:52+00:00"
     }
   ],
-  "updatedAt": "2026-10-20T14:11:49+00:00"
+  "updatedAt": "2026-10-20T14:21:09+00:00"
 }
