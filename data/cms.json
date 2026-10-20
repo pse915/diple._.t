@@ -126,7 +126,7 @@
         "githubUrl": "",
         "guideUrl": "",
         "updatedAt": "2026-10-20",
-        "visible": true,
+        "visible": false,
         "showExampleBadge": true
       },
       {
@@ -175,7 +175,7 @@
         "githubUrl": "",
         "guideUrl": "",
         "updatedAt": "2026-10-20",
-        "visible": true,
+        "visible": false,
         "showExampleBadge": true
       },
       {
@@ -225,7 +225,7 @@
         "githubUrl": "",
         "guideUrl": "",
         "updatedAt": "2026-10-20",
-        "visible": true,
+        "visible": false,
         "showExampleBadge": true
       },
       {
@@ -274,7 +274,7 @@
         "githubUrl": "",
         "guideUrl": "",
         "updatedAt": "2026-10-20",
-        "visible": true,
+        "visible": false,
         "showExampleBadge": true
       },
       {
@@ -324,7 +324,7 @@
         "githubUrl": "",
         "guideUrl": "",
         "updatedAt": "2026-10-20",
-        "visible": true,
+        "visible": false,
         "showExampleBadge": true
       },
       {
@@ -373,7 +373,7 @@
         "githubUrl": "",
         "guideUrl": "",
         "updatedAt": "2026-10-20",
-        "visible": true,
+        "visible": false,
         "showExampleBadge": true
       }
     ],
@@ -385,7 +385,7 @@
         "buttonLabel": "질문게시판으로",
         "id": "hero",
         "type": "hero",
-        "visible": true,
+        "visible": false,
         "isExample": true,
         "showExampleBadge": false,
         "layout": "grid",
@@ -587,7 +587,7 @@
         "githubUrl": "",
         "guideUrl": "",
         "updatedAt": "2026-10-20",
-        "visible": true,
+        "visible": false,
         "showExampleBadge": true
       },
       {
@@ -636,7 +636,7 @@
         "githubUrl": "",
         "guideUrl": "",
         "updatedAt": "2026-10-20",
-        "visible": true,
+        "visible": false,
         "showExampleBadge": true
       },
       {
@@ -686,7 +686,7 @@
         "githubUrl": "",
         "guideUrl": "",
         "updatedAt": "2026-10-20",
-        "visible": true,
+        "visible": false,
         "showExampleBadge": true
       },
       {
@@ -735,7 +735,7 @@
         "githubUrl": "",
         "guideUrl": "",
         "updatedAt": "2026-10-20",
-        "visible": true,
+        "visible": false,
         "showExampleBadge": true
       },
       {
@@ -785,7 +785,7 @@
         "githubUrl": "",
         "guideUrl": "",
         "updatedAt": "2026-10-20",
-        "visible": true,
+        "visible": false,
         "showExampleBadge": true
       },
       {
@@ -834,7 +834,7 @@
         "githubUrl": "",
         "guideUrl": "",
         "updatedAt": "2026-10-20",
-        "visible": true,
+        "visible": false,
         "showExampleBadge": true
       }
     ],
@@ -846,7 +846,7 @@
         "buttonLabel": "질문게시판으로",
         "id": "hero",
         "type": "hero",
-        "visible": true,
+        "visible": false,
         "isExample": true,
         "showExampleBadge": false,
         "layout": "grid",
@@ -924,9 +924,13 @@
   },
   "history": [
     {
+      "id": "6412fb49-d02f-4211-93f7-8a6118c57b55",
+      "createdAt": "2026-10-20T13:26:03+00:00"
+    },
+    {
       "id": "6649c895-e429-46c8-a9fb-f60a9c796f3b",
       "createdAt": "2026-10-20T13:21:52+00:00"
     }
   ],
-  "updatedAt": "2026-10-20T13:21:54+00:00"
+  "updatedAt": "2026-10-20T13:26:05+00:00"
 }
