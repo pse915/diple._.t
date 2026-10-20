@@ -126,7 +126,7 @@ test('screenshots of desktop, detail, mobile and tablet',async({page})=>{
 
 test('configured giscus separates app terms and guestbook (mock widget)',async({page})=>{
   await page.route('https://giscus.app/**',route=>route.fulfill({contentType:'text/html',body:`<html><body>Mock discussion widget<script>setTimeout(()=>parent.postMessage({giscus:{resizeHeight:130,discussion:{url:'https://github.com/test-owner/test-comments/discussions/7'}}},'*'),100)</script></body></html>`}));
-  await page.goto('http://127.0.0.1:8622/?app=classroom-notebook');
+  await page.goto('http://127.0.0.1:8832/?app=classroom-notebook');
   await expect(page.locator('giscus-widget')).toHaveCount(1);
   let frame=page.locator('giscus-widget iframe');
   await expect(frame).toHaveAttribute('src',/term=app%3Aclassroom-notebook/);
@@ -147,7 +147,7 @@ test('configured giscus separates app terms and guestbook (mock widget)',async({
 
 test('giscus unavailable: timeout and retry leave navigation working',async({page})=>{
   await page.route('https://giscus.app/**',route=>route.abort());
-  await page.goto('http://127.0.0.1:8622/?app=classroom-notebook');
+  await page.goto('http://127.0.0.1:8832/?app=classroom-notebook');
   await expect(page.getByRole('status')).toContainText('댓글을 불러오지 못했거나',{timeout:15000});
   await page.getByRole('button',{name:'다시 시도',exact:true}).click();
   await expect(page.locator('giscus-widget')).toHaveCount(1);

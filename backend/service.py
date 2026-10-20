@@ -129,6 +129,10 @@ class Service:
         if not preview:
             doc["apps"]=[a for a in doc["apps"] if a.get("visible",True)]
             doc["sections"]=[s for s in doc["sections"] if s.get("visible",True)]
+        doc["boards"]=[{**b,"posts":[p for p in b["posts"] if not p["deleted"] and (preview or p["visible"])]}
+                       for b in doc.get("boards",[]) if preview or b["visible"]]
+        visible_menus={"board:"+b["id"] for b in doc["boards"]}|{"home","apps","about","guestbook"}
+        doc["menuOrder"]=[v for v in doc.get("menuOrder",["home","apps","about","guestbook"]) if v in visible_menus]
         images={}
         def resolve(path):
             if path not in images:
@@ -141,7 +145,7 @@ class Service:
             section["image"]=resolve(section.get("image",""))
         doc["site"]["profile"]["image"]=resolve(doc["site"]["profile"].get("image",""))
         doc["site"]["hero"]["image"]=resolve(doc["site"]["hero"].get("image",""))
-        return {"site":doc["site"],"apps":doc["apps"],"sections":doc["sections"],"giscus":copy.deepcopy(self.base_payload["giscus"]),"warnings":[]}
+        return {"site":doc["site"],"apps":doc["apps"],"sections":doc["sections"],"boards":doc["boards"],"menuOrder":doc["menuOrder"],"giscus":copy.deepcopy(self.base_payload["giscus"]),"warnings":[]}
 
     def public_payload(self):
         with self.lock:

@@ -1,3 +1,4 @@
+import {BoardPage} from './boards';
 import {Icon,Preview,Link,AppCard} from './ui';
 import {Home} from './home';
 import {AdminDialog} from './admin';
@@ -69,17 +70,18 @@ function Workshop({payload:published}:{payload:Payload}) {
   const titleRef=useRef<HTMLDivElement>(null);
   useEffect(()=>{const pop=()=>setRoute(readRoute());window.addEventListener('popstate',pop);return()=>window.removeEventListener('popstate',pop);},[]);
   useEffect(()=>{try{localStorage.setItem('workshop-theme',theme);}catch{}},[theme]);
-  useEffect(()=>{const selected=apps.find(a=>a.id===route.app);document.title=`${selected?.title||site.title} · ${site.brand}`;setCopied('');},[route,apps,site]);
+  useEffect(()=>{const selected=apps.find(a=>a.id===route.app);const board=payload.boards?.find(b=>b.id===route.board);const post=board?.posts.find(p=>p.id===route.post);document.title=`${post?.title||board?.title||selected?.title||site.title} · ${site.brand}`;setCopied('');},[route,apps,site,payload.boards]);
   const navigate=(next:Route)=>{history.pushState({},'',routeUrl(next));setRoute(next);titleRef.current?.scrollIntoView({block:'start'});requestAnimationFrame(()=>titleRef.current?.focus({preventScroll:true}));};
-  const go=(view:string)=>navigate({view,app:''});const openApp=(id:string)=>navigate({view:'apps',app:id});
+  const go=(view:string)=>view.startsWith('board:')?navigate({view:'board',app:'',board:view.slice(6),post:''}):navigate({view,app:'',board:'',post:''});const openApp=(id:string)=>navigate({view:'apps',app:id});
   const chooseCategory=(c:string)=>{setCategory(c);setTag('');setQuery('');go('apps');};
   const selected=apps.find(a=>a.id===route.app);
   const filtered=useMemo(()=>selectApps(apps,query,category,tag,sort),[apps,query,category,tag,sort]);
   const tags=[...new Set(apps.flatMap(a=>a.tags))];
   const featured=selectApps(apps,'','전체','','featured').filter(a=>a.featured).slice(0,3);
   const recent=selectApps(apps,'','전체','','recent').slice(0,3);
-  const nav=[['home','home','공방 홈'],['apps','grid','앱 모음'],['about','user','제작자 소개'],['guestbook','chat','질문게시판']];
-  const active=route.app?'apps':route.view;
+  const menuItems=[['home','home','공방 홈'],['apps','grid','앱 모음'],['about','user','제작자 소개'],['guestbook','chat','질문게시판'],...(payload.boards||[]).filter(b=>b.visible).map(b=>['board:'+b.id,b.icon,b.title])];
+  const order=payload.menuOrder||menuItems.map(n=>n[0]);const nav=[...order,...menuItems.map(n=>n[0]).filter(id=>!order.includes(id))].map(id=>menuItems.find(n=>n[0]===id)).filter((n):n is string[]=>!!n);
+  const active=route.board?'board:'+route.board:route.app?'apps':route.view;
   const categoryRow=<div className="category-row" aria-label="카테고리 바로가기">{site.categories.map((c,i)=><button key={c} onClick={()=>chooseCategory(c)}><span className={`category-circle tone-${i}`}><Icon name={symbols[i%5]} size={25}/></span><span>{c}</span></button>)}</div>;
   const cards=(list:CatalogApp[])=>list.length?<div className="app-grid">{list.map(a=><AppCard key={a.id} app={a} onOpen={openApp}/>)}</div>:<div className="empty"><Icon name="search" size={30}/><h3>아직 등록된 앱이 없어요.</h3></div>;
   const copyLink=async()=>{try{await navigator.clipboard.writeText(location.href);setCopied('링크를 복사했습니다.');}catch{setCopied('아래 주소를 복사해 주세요.');}};
@@ -89,7 +91,7 @@ function Workshop({payload:published}:{payload:Payload}) {
     <div className="main-canvas"><header className="topbar"><span className="mobile-brand">✳ {site.brand}</span><div className="breadcrumb">THE ATELIER <span>/</span> <b>{nav.find(n=>n[0]===active)?.[2]}</b></div><div className="top-actions"><span className="top-note"><i/>{site.topNote}</span><button className="btn admin-entry" onClick={()=>setAdminOpen(true)}>{api.authenticated?'관리 도구':'관리자 모드'}</button><button className="icon-button" aria-label={theme==='light'?'어두운 테마':'밝은 테마'} onClick={()=>setTheme(t=>t==='light'?'dark':'light')}><Icon name={theme==='light'?'moon':'sun'}/></button></div></header>
       <AdminDialog open={adminOpen} onClose={()=>setAdminOpen(false)} onPreview={setPreview} payload={published}/><main id="main-content" className="content" ref={titleRef} tabIndex={-1}>
       {preview&&api.authenticated&&<div className="preview-banner"><b>관리자 전용 미리보기 · 아직 게시되지 않았습니다.</b><div className="button-row"><button className="btn" onClick={()=>setAdminOpen(true)}>편집으로 돌아가기</button><button className="btn" onClick={()=>setPreview(null)}>미리보기 종료</button></div></div>}{payload.warnings.length>0&&<details className="data-warning"><summary>일부 소개 정보를 표시하지 못했습니다 ({payload.warnings.length})</summary><ul>{payload.warnings.map((w,i)=><li key={i}>{w}</li>)}</ul></details>}
-      {route.app&&!selected?<section className="empty"><h1>앱을 찾을 수 없어요.</h1><p>주소가 변경되었거나 소개가 내려갔을 수 있습니다.</p><button className="btn primary" onClick={()=>go('apps')}>앱 모음으로</button></section>:selected?<>
+      {route.board?<BoardPage key={route.board} board={(payload.boards||[]).find(b=>b.id===route.board&&b.visible)} postId={route.post} onPost={id=>navigate({view:'board',app:'',board:route.board,post:id})} onBack={()=>navigate({view:'board',app:'',board:route.board,post:''})} onHome={()=>go('home')}/>:route.app&&!selected?<section className="empty"><h1>앱을 찾을 수 없어요.</h1><p>주소가 변경되었거나 소개가 내려갔을 수 있습니다.</p><button className="btn primary" onClick={()=>go('apps')}>앱 모음으로</button></section>:selected?<>
         <button className="back-link" onClick={()=>go('apps')}><Icon name="back" size={17}/> 앱 모음으로</button>
         <div className="detail-heading"><div><span className="eyebrow">{selected.category} / {selected.isExample?'EXAMPLE':'APP STORY'}</span><h1>{selected.title}</h1><p>{selected.summary}</p></div><button className="btn" onClick={copyLink}><Icon name="share" size={17}/> 공유</button></div>
         {copied&&<div className="share-result" role="status">{copied}<input aria-label="공유 주소" value={location.href} readOnly onFocus={e=>e.target.select()}/></div>}
@@ -110,7 +112,7 @@ function Workshop({payload:published}:{payload:Payload}) {
       </>:<><div className="page-heading"><span className="eyebrow">NOTES FROM YOU</span><h1>반가워요.<br/>이야기를 남겨주세요.</h1><p>앱 사용 중 궁금한 점이나 개선 아이디어를 남겨주세요.</p></div><Comments config={giscus} term="guestbook" theme={theme}/><PrivateForm/></>}
       {site.footerVisible!==false&&<footer><div><b>✳ {site.brand}</b><p>{site.footer}</p></div><span>{site.title}</span></footer>}
       </main></div>
-    <nav className="mobile-nav" aria-label="모바일 메뉴">{nav.map(([view,icon,label])=><button key={view} className={active===view?'active':''} aria-current={active===view?'page':undefined} onClick={()=>go(view)}><Icon name={icon} size={21}/><span>{label}</span></button>)}</nav>
+    <nav className={`mobile-nav ${nav.length>4?'many-menus':''}`} aria-label="모바일 메뉴">{nav.map(([view,icon,label])=><button key={view} className={active===view?'active':''} aria-current={active===view?'page':undefined} onClick={()=>go(view)}><Icon name={icon} size={21}/><span>{label}</span></button>)}</nav>
   </div>;
 }
 class Boundary extends React.Component<{children:React.ReactNode},{failed:boolean}> {

@@ -133,4 +133,10 @@ def normalize_document(doc):
         nested={"site":clean,"apps":[entry["value"]] if entry["kind"]=="app" else [],"sections":[entry["value"]] if entry["kind"]=="section" else [],"trash":[]}
         checked=normalize_document(nested)
         safe_trash.append({"kind":entry["kind"],"value":checked["apps" if entry["kind"]=="app" else "sections"][0]})
-    return {"site":clean,"apps":apps,"sections":normalized,"trash":safe_trash}
+    from .boards import normalize_boards, normalize_navigation
+    boards=normalize_boards(doc.get("boards",[]))
+    board_trash=normalize_boards(doc.get("boardTrash",[]))
+    if {b["id"] for b in boards}&{b["id"] for b in board_trash}:
+        raise UserError("휴지통과 현재 게시판의 ID가 중복되었습니다.")
+    return {"site":clean,"apps":apps,"sections":normalized,"trash":safe_trash,
+            "boards":boards,"boardTrash":board_trash,"menuOrder":normalize_navigation(doc.get("menuOrder"),boards)}

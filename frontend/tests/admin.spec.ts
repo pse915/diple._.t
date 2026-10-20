@@ -1,5 +1,5 @@
 import {test,expect,Page} from '@playwright/test';
-const base='http://127.0.0.1:8621';
+const base='http://127.0.0.1:8831';
 async function login(page:Page){
   await page.goto(base);await page.getByRole('button',{name:'관리자 모드',exact:true}).click();
   await page.getByLabel('관리자 코드',{exact:true}).fill('Test-admin-code-2026!');
@@ -106,7 +106,7 @@ test('mobile manager and question board screenshots',async({page})=>{
 });
 
 test('real server inactivity expiry clears administrator interface',async({page})=>{
-  await page.goto('http://127.0.0.1:8623/');await page.getByRole('button',{name:'관리자 모드',exact:true}).click();
+  await page.goto('http://127.0.0.1:8833/');await page.getByRole('button',{name:'관리자 모드',exact:true}).click();
   await page.getByLabel('관리자 코드',{exact:true}).fill('Test-admin-code-2026!');await page.getByRole('button',{name:'관리자 로그인',exact:true}).click();
   await expect(page.getByRole('button',{name:'새 앱 작성',exact:true})).toBeVisible();
   await expect(page.getByLabel('관리자 코드',{exact:true})).toBeVisible({timeout:8000});
