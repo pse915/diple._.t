@@ -16,7 +16,7 @@
           "visible": true
         },
         {
-          "name": "교무 업무",
+          "name": "학교업무",
           "icon": "calendar",
           "visible": true
         },
@@ -38,7 +38,7 @@
       ],
       "categories": [
         "수업 도구",
-        "교무 업무",
+        "학교업무",
         "교육용 게임",
         "생활 편의",
         "기타"
@@ -115,7 +115,7 @@
         "changelog": [
           "v1.1(잠금모드 삭제)"
         ],
-        "category": "교무 업무",
+        "category": "학교업무",
         "featured": true,
         "isExample": false,
         "sortOrder": 1,
@@ -214,7 +214,7 @@
         "changelog": [
           "2026-10-20 · 홈페이지 예시 콘텐츠 등록"
         ],
-        "category": "교무 업무",
+        "category": "학교업무",
         "featured": true,
         "isExample": true,
         "sortOrder": 3,
@@ -313,7 +313,7 @@
         "changelog": [
           "2026-10-20 · 홈페이지 예시 콘텐츠 등록"
         ],
-        "category": "교무 업무",
+        "category": "학교업무",
         "featured": false,
         "isExample": true,
         "sortOrder": 5,
@@ -524,7 +524,7 @@
           "visible": true
         },
         {
-          "name": "교무 업무",
+          "name": "학교업무",
           "icon": "calendar",
           "visible": true
         },
@@ -546,7 +546,7 @@
       ],
       "categories": [
         "수업 도구",
-        "교무 업무",
+        "학교업무",
         "교육용 게임",
         "생활 편의",
         "기타"
@@ -623,7 +623,7 @@
         "changelog": [
           "v1.1(잠금모드 삭제)"
         ],
-        "category": "교무 업무",
+        "category": "학교업무",
         "featured": true,
         "isExample": false,
         "sortOrder": 1,
@@ -722,7 +722,7 @@
         "changelog": [
           "2026-10-20 · 홈페이지 예시 콘텐츠 등록"
         ],
-        "category": "교무 업무",
+        "category": "학교업무",
         "featured": true,
         "isExample": true,
         "sortOrder": 3,
@@ -821,7 +821,7 @@
         "changelog": [
           "2026-10-20 · 홈페이지 예시 콘텐츠 등록"
         ],
-        "category": "교무 업무",
+        "category": "학교업무",
         "featured": false,
         "isExample": true,
         "sortOrder": 5,
@@ -1018,6 +1018,10 @@
   },
   "history": [
     {
+      "id": "626b22ff-0be8-47dc-b203-febf73d1c06e",
+      "createdAt": "2026-10-20T14:22:33+00:00"
+    },
+    {
       "id": "2d390654-e6e6-4285-b6be-ec1f8c5316e0",
       "createdAt": "2026-10-20T14:21:25+00:00"
     },
@@ -1074,5 +1078,5 @@
       "createdAt": "2026-10-20T13:21:52+00:00"
     }
   ],
-  "updatedAt": "2026-10-20T14:21:27+00:00"
+  "updatedAt": "2026-10-20T14:22:36+00:00"
 }
