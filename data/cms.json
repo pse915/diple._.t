@@ -45,7 +45,7 @@
       ],
       "profile": {
         "name": "Diple",
-        "role": "다양한 웹앱을 개발하고자 합니다.",
+        "role": "어릴적 게임을 엄청 좋아하고, 컴퓨터를 좋아하는 기술가정 선생님입니다.",
         "bio": "📚 기술수업 × 바이브코딩 × 업무효율화\n🎮 교육용 게임\n💻 업무 효율화 연구, 웹앱\n🤖 AI로 만들고, 학교에서 활용하고, 공유합니다.",
         "visible": true,
         "image": "assets/uploads/78ed6090cff96775bb61aa3ced789cd3337e67a3a7e87254ff87be7ac4e62b48.webp",
@@ -60,7 +60,12 @@
         "buttonLabel": "질문 남기기",
         "showPrinciples": true,
         "showInvite": true,
-        "links": []
+        "links": [
+          {
+            "label": "인스타그램",
+            "url": "https://www.instagram.com/diple._.t"
+          }
+        ]
       },
       "hero": {
         "title": "작은 아이디어,\n쓸모 있는 변화.",
@@ -548,7 +553,7 @@
       ],
       "profile": {
         "name": "Diple",
-        "role": "다양한 웹앱을 개발하고자 합니다.",
+        "role": "어릴적 게임을 엄청 좋아하고, 컴퓨터를 좋아하는 기술가정 선생님입니다.",
         "bio": "📚 기술수업 × 바이브코딩 × 업무효율화\n🎮 교육용 게임\n💻 업무 효율화 연구, 웹앱\n🤖 AI로 만들고, 학교에서 활용하고, 공유합니다.",
         "visible": true,
         "image": "assets/uploads/78ed6090cff96775bb61aa3ced789cd3337e67a3a7e87254ff87be7ac4e62b48.webp",
@@ -563,7 +568,12 @@
         "buttonLabel": "질문 남기기",
         "showPrinciples": true,
         "showInvite": true,
-        "links": []
+        "links": [
+          {
+            "label": "인스타그램",
+            "url": "https://www.instagram.com/diple._.t"
+          }
+        ]
       },
       "hero": {
         "title": "작은 아이디어,\n쓸모 있는 변화.",
@@ -1008,6 +1018,10 @@
   },
   "history": [
     {
+      "id": "d532feb0-0db7-4e7a-be2f-65ea276f8ec5",
+      "createdAt": "2026-10-20T14:08:34+00:00"
+    },
+    {
       "id": "d2e60952-8297-440e-a303-81a6bbdd32d1",
       "createdAt": "2026-10-20T14:03:49+00:00"
     },
@@ -1044,5 +1058,5 @@
       "createdAt": "2026-10-20T13:21:52+00:00"
     }
   ],
-  "updatedAt": "2026-10-20T14:03:51+00:00"
+  "updatedAt": "2026-10-20T14:08:36+00:00"
 }
