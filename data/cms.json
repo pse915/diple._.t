@@ -506,7 +506,44 @@
         "buttonView": "guestbook"
       }
     ],
-    "trash": []
+    "trash": [],
+    "boards": [
+      {
+        "id": "board-db744ee6-f91",
+        "title": "연수 자료",
+        "description": "강의한 내용들을 올립니다.",
+        "icon": "layers",
+        "layout": "list",
+        "visible": true,
+        "posts": [
+          {
+            "id": "post-36e9b107-936",
+            "title": "기술교사 Streamlit + Github + Google sheets 웹앱 개발하기",
+            "summary": "강의 자료 pdf를 첨부합니다.",
+            "content": "",
+            "tags": [],
+            "links": [
+              {
+                "label": "기술교사_웹앱.pdf",
+                "url": "https://drive.google.com/file/d/1juQK7GMEDe24rqhDw4ZmzugyN7ymMXOl/view?usp=drive_link"
+              }
+            ],
+            "updatedAt": "2026-10-20",
+            "visible": true,
+            "pinned": false,
+            "deleted": false
+          }
+        ]
+      }
+    ],
+    "boardTrash": [],
+    "menuOrder": [
+      "home",
+      "apps",
+      "board:board-db744ee6-f91",
+      "about",
+      "guestbook"
+    ]
   },
   "draft": {
     "site": {
@@ -1014,9 +1051,50 @@
         "buttonView": "guestbook"
       }
     ],
-    "trash": []
+    "trash": [],
+    "boards": [
+      {
+        "id": "board-db744ee6-f91",
+        "title": "연수 자료",
+        "description": "강의한 내용들을 올립니다.",
+        "icon": "layers",
+        "layout": "list",
+        "visible": true,
+        "posts": [
+          {
+            "id": "post-36e9b107-936",
+            "title": "기술교사 Streamlit + Github + Google sheets 웹앱 개발하기",
+            "summary": "강의 자료 pdf를 첨부합니다.",
+            "content": "",
+            "tags": [],
+            "links": [
+              {
+                "label": "기술교사_웹앱.pdf",
+                "url": "https://drive.google.com/file/d/1juQK7GMEDe24rqhDw4ZmzugyN7ymMXOl/view?usp=drive_link"
+              }
+            ],
+            "updatedAt": "2026-10-20",
+            "visible": true,
+            "pinned": false,
+            "deleted": false
+          }
+        ]
+      }
+    ],
+    "boardTrash": [],
+    "menuOrder": [
+      "home",
+      "apps",
+      "board:board-db744ee6-f91",
+      "about",
+      "guestbook"
+    ]
   },
   "history": [
+    {
+      "id": "3ce49601-99d2-4dbf-b864-8eea7ec8091d",
+      "createdAt": "2026-10-20T14:45:37+00:00"
+    },
     {
       "id": "626b22ff-0be8-47dc-b203-febf73d1c06e",
       "createdAt": "2026-10-20T14:22:33+00:00"
@@ -1078,5 +1156,5 @@
       "createdAt": "2026-10-20T13:21:52+00:00"
     }
   ],
-  "updatedAt": "2026-10-20T14:22:36+00:00"
+  "updatedAt": "2026-10-20T14:45:38+00:00"
 }
