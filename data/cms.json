@@ -92,7 +92,9 @@
         ],
         "features": [],
         "targetUsers": [],
-        "supportedDevices": [],
+        "supportedDevices": [
+          "웹 접속 가능한 모든 기기"
+        ],
         "useCases": [],
         "instructions": [],
         "changelog": [],
@@ -581,7 +583,9 @@
         ],
         "features": [],
         "targetUsers": [],
-        "supportedDevices": [],
+        "supportedDevices": [
+          "웹 접속 가능한 모든 기기"
+        ],
         "useCases": [],
         "instructions": [],
         "changelog": [],
@@ -980,6 +984,10 @@
   },
   "history": [
     {
+      "id": "4cb1d55b-4573-4390-9935-26d42154fbac",
+      "createdAt": "2026-10-20T13:36:22+00:00"
+    },
+    {
       "id": "1e371206-9a62-4cf7-a0f6-38ba58dfe8a9",
       "createdAt": "2026-10-20T13:35:35+00:00"
     },
@@ -992,5 +1000,5 @@
       "createdAt": "2026-10-20T13:21:52+00:00"
     }
   ],
-  "updatedAt": "2026-10-20T13:35:38+00:00"
+  "updatedAt": "2026-10-20T13:36:24+00:00"
 }
