@@ -128,7 +128,7 @@
       },
       {
         "id": "tiple",
-        "title": "Diple TimeTable Master",
+        "title": "TimeTable Master",
         "summary": "TimeTable Master",
         "description": "교육과정부를 위한 시간표 마스터!\n\n시간표 변경->시험감독 적용,\n결강, 보강 등록,\n\n시간표 맞교환&변경 추천\n일반 교사용 시간표 교환 변경 테스트\n변경된 교사 주간표 조회\n1:1 맞교환 불가시 루프 함수를 이용한\n3~4인 순환교환 지원\n시간강사 관리 등록으로 휴가 관리, 예산까지\n통계를 활용한 보강비 확인\n교무부를 위한 교무호봉 획정,\n권한을 활용한 다양한 설정까지!\n\n10월 내로 출시됩니다.",
         "thumbnail": "assets/uploads/4d7b170ef6829178ef9fe6b1d1671576f97b8b1be0e72201d1a3dcc4428bd9bc.webp",
@@ -701,7 +701,7 @@
       },
       {
         "id": "tiple",
-        "title": "Diple TimeTable Master",
+        "title": "TimeTable Master",
         "summary": "TimeTable Master",
         "description": "교육과정부를 위한 시간표 마스터!\n\n시간표 변경->시험감독 적용,\n결강, 보강 등록,\n\n시간표 맞교환&변경 추천\n일반 교사용 시간표 교환 변경 테스트\n변경된 교사 주간표 조회\n1:1 맞교환 불가시 루프 함수를 이용한\n3~4인 순환교환 지원\n시간강사 관리 등록으로 휴가 관리, 예산까지\n통계를 활용한 보강비 확인\n교무부를 위한 교무호봉 획정,\n권한을 활용한 다양한 설정까지!\n\n10월 내로 출시됩니다.",
         "thumbnail": "assets/uploads/4d7b170ef6829178ef9fe6b1d1671576f97b8b1be0e72201d1a3dcc4428bd9bc.webp",
@@ -1148,6 +1148,10 @@
   },
   "history": [
     {
+      "id": "26d25aff-1e6a-45f9-a4d3-0be1d6c18481",
+      "createdAt": "2026-10-23T06:09:33+00:00"
+    },
+    {
       "id": "5d19a02b-9901-4696-aaae-03dd38a67aff",
       "createdAt": "2026-10-23T06:04:06+00:00"
     },
@@ -1220,5 +1224,5 @@
       "createdAt": "2026-10-20T13:21:52+00:00"
     }
   ],
-  "updatedAt": "2026-10-23T06:04:08+00:00"
+  "updatedAt": "2026-10-23T06:09:36+00:00"
 }
