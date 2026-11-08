@@ -105,7 +105,7 @@
           "에듀테크"
         ],
         "screenshots": [
-          "assets/uploads/7787e3974adb931e8bfe98678aa5ba8c26f7e0ec0a8c92d7d2216ad77e8f1159.webp"
+          "assets/uploads/5a3656ca77c85bb5df416ddbf3a63fd5c3b9b3308eb7d331bf4ff752a357eca1.webp"
         ],
         "features": [
           "학교 전체·학년·학급별 공지 게시와 읽음 확인",
@@ -767,7 +767,7 @@
           "에듀테크"
         ],
         "screenshots": [
-          "assets/uploads/7787e3974adb931e8bfe98678aa5ba8c26f7e0ec0a8c92d7d2216ad77e8f1159.webp"
+          "assets/uploads/5a3656ca77c85bb5df416ddbf3a63fd5c3b9b3308eb7d331bf4ff752a357eca1.webp"
         ],
         "features": [
           "학교 전체·학년·학급별 공지 게시와 읽음 확인",
@@ -1326,6 +1326,10 @@
   },
   "history": [
     {
+      "id": "9be4ecd7-b1f7-4644-bef8-cd941b940dae",
+      "createdAt": "2026-11-08T14:02:15+00:00"
+    },
+    {
       "id": "da114fa3-54db-45b9-b65e-bcf3dd51bd18",
       "createdAt": "2026-11-08T13:57:42+00:00"
     },
@@ -1400,11 +1404,7 @@
     {
       "id": "719bebac-1853-401c-8262-53a0625bcbc6",
       "createdAt": "2026-10-20T13:37:12+00:00"
-    },
-    {
-      "id": "4cb1d55b-4573-4390-9935-26d42154fbac",
-      "createdAt": "2026-10-20T13:36:22+00:00"
     }
   ],
-  "updatedAt": "2026-11-08T13:57:45+00:00"
+  "updatedAt": "2026-11-08T14:02:17+00:00"
 }
