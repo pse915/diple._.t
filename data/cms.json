@@ -661,19 +661,21 @@
         "id": "app-734783df",
         "title": "학교생활",
         "summary": "",
-        "description": "✅ 학교·학년·학급별 공지와 읽음 확인\n✅ 학년·반을 골라 여러 학생 상벌점 한 번에 기록\n✅ 공개 범위에 따라 학부모·학생에게 상벌점 공개\n✅ 담임 상담 시간 열기, 학부모 상담 신청·승인\n✅ 초대 코드로만 가입, 역할별로 다른 화면\n✅ 한글 엑셀 양식으로 학생·학부모 일괄 등록\n\n설치 방법은",
-        "thumbnail": "",
-        "status": "준비 중",
+        "description": "✅ 학교·학년·학급별 공지와 읽음 확인\n✅ 학년·반을 골라 여러 학생 상벌점 한 번에 기록\n✅ 공개 범위에 따라 학부모·학생에게 상벌점 공개\n✅ 담임 상담 시간 열기, 학부모 상담 신청·승인\n✅ 초대 코드로만 가입, 역할별로 다른 화면\n✅ 한글 엑셀 양식으로 학생·학부모 일괄 등록\n\n설치 방법은 아래 링크를 참고하세요.https://docs.google.com/document/d/1Waa6dT7j3PtHJuFIwkdxZM8ivhVgeiHKaz2s6RKdVC8 \n\n각 권한별 설명서\n학교 관리자용 설명서\nhttps://docs.google.com/document/d/1FRhpEU8tLLY6qdXBhPFGRNzRJkL-UN0VLMskyR5mALg\n\n담임용 설명서\nhttps://docs.google.com/document/d/1YMq0hZqaa8fggjHo_-jgj387AcLFU436KFH6ZbUUjL0\n\n학부모용 설명서\nhttps://docs.google.com/document/d/1IjZiq4dScu0gulvctujpLHnSq1-TGSYYvr1TCk4Noxk\n\n학생용 설명서\nhttps://docs.google.com/document/d/1yAC4ishe9T01C2JzUdTIFSyczhEMWyXlfOjmvaAeITE",
+        "thumbnail": "assets/uploads/5c9ac0ea60b452c0fca8ccbf75c4367b21bfb866c4a7e4163c11418ba39b6dc6.webp",
+        "status": "배포 중",
         "tags": [],
-        "screenshots": [],
+        "screenshots": [
+          "assets/uploads/5c9ac0ea60b452c0fca8ccbf75c4367b21bfb866c4a7e4163c11418ba39b6dc6.webp"
+        ],
         "features": [],
         "targetUsers": [],
         "supportedDevices": [],
         "useCases": [],
         "instructions": [],
         "changelog": [],
-        "category": "수업 도구",
-        "featured": false,
+        "category": "학교업무",
+        "featured": true,
         "isExample": false,
         "sortOrder": 1,
         "appUrl": "https://docs.google.com/spreadsheets/d/1Y30EMa42VAqOrTR4orioUbFTJGGbK8RCWFfj1k9DyXE/copy",
@@ -1254,5 +1256,5 @@
       "createdAt": "2026-10-20T13:26:03+00:00"
     }
   ],
-  "updatedAt": "2026-11-08T13:51:10+00:00"
+  "updatedAt": "2026-11-08T13:54:50+00:00"
 }
