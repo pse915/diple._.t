@@ -85,6 +85,95 @@
     },
     "apps": [
       {
+        "id": "app-734783df",
+        "title": "학교생활",
+        "summary": "",
+        "description": "✅ 학교·학년·학급별 공지와 읽음 확인\n✅ 학년·반을 골라 여러 학생 상벌점 한 번에 기록\n✅ 공개 범위에 따라 학부모·학생에게 상벌점 공개\n✅ 담임 상담 시간 열기, 학부모 상담 신청·승인\n✅ 초대 코드로만 가입, 역할별로 다른 화면\n✅ 한글 엑셀 양식으로 학생·학부모 일괄 등록\n\n설치 방법은 아래 링크를 참고하세요.https://docs.google.com/document/d/1Waa6dT7j3PtHJuFIwkdxZM8ivhVgeiHKaz2s6RKdVC8 \n\n각 권한별 설명서\n학교 관리자용 설명서\nhttps://docs.google.com/document/d/1FRhpEU8tLLY6qdXBhPFGRNzRJkL-UN0VLMskyR5mALg\n\n담임용 설명서\nhttps://docs.google.com/document/d/1YMq0hZqaa8fggjHo_-jgj387AcLFU436KFH6ZbUUjL0\n\n학부모용 설명서\nhttps://docs.google.com/document/d/1IjZiq4dScu0gulvctujpLHnSq1-TGSYYvr1TCk4Noxk\n\n학생용 설명서\nhttps://docs.google.com/document/d/1yAC4ishe9T01C2JzUdTIFSyczhEMWyXlfOjmvaAeITE",
+        "thumbnail": "assets/uploads/5c9ac0ea60b452c0fca8ccbf75c4367b21bfb866c4a7e4163c11418ba39b6dc6.webp",
+        "status": "배포 중",
+        "tags": [
+          "학교생활",
+          "학부모상담",
+          "상벌점",
+          "학교공지",
+          "가정통신문",
+          "담임업무",
+          "교무업무",
+          "교사업무경감",
+          "구글시트",
+          "앱스크립트",
+          "에듀테크"
+        ],
+        "screenshots": [
+          "assets/uploads/5c9ac0ea60b452c0fca8ccbf75c4367b21bfb866c4a7e4163c11418ba39b6dc6.webp"
+        ],
+        "features": [
+          "학교 전체·학년·학급별 공지 게시와 읽음 확인",
+          "학년·반을 골라 여러 학생에게 상벌점 한 번에 기록",
+          "상벌점 규칙별 공개 범위 설정(교직원만 / 교직원·학부모 / 학부모·학생)",
+          "학부모·학생 화면에서 입력 교사 이름 가운데 글자 가림(예: 박O민)",
+          "상벌점 정정·삭제와 감사 기록",
+          "담임 상담 가능 시간 열기, 학부모 상담 신청·승인·변경·취소",
+          "숫자 10자리 초대 코드로만 가입(7일 유효, 1회용)",
+          "학생·학부모 등록 시 초대 코드 자동 발급과 목록 내려받기",
+          "한글 엑셀 양식(CSV) 일괄 등록과 한 명씩 직접 등록",
+          "관리자·담임·학부모·학생 역할별 메뉴와 권한",
+          "복구 코드로 비밀번호 재설정, 로그인 실패 잠금",
+          "드라이브 비공개 폴더 자동 백업과 시트 공개 감지"
+        ],
+        "targetUsers": [
+          "학부모 소통 창구를 하나로 모으고 싶은 소규모 학교 관리자",
+          "별도 서버나 유료 서비스 없이 시작하고 싶은 학교"
+        ],
+        "supportedDevices": [
+          "PC(Windows·macOS) Chrome·Edge·Safari 브라우저",
+          "안드로이드 휴대폰 Chrome",
+          "아이폰·아이패드 Safari",
+          "태블릿 웹 브라우저",
+          "홈 화면에 추가해 앱처럼 실행 가능"
+        ],
+        "useCases": [
+          "교실 청소 봉사 학생 여러 명에게 상점을 한 번에 기록",
+          "학년 전체 체험학습 안내를 학부모에게만 공지",
+          "학부모 상담 주간에 담임이 시간을 열고 학부모가 직접 신청",
+          "신입생 명단을 엑셀로 올리고 초대 코드 목록을 개별안내",
+          "학부모 공개 규칙만 골라 가정과 생활 기록 공유",
+          "학생이 자신의 상점·벌점을 휴대폰으로 확인"
+        ],
+        "instructions": [
+          "사본 만들기 링크로 원본 시트를 내 드라이브에 복사",
+          "사본 시트 공유 설정이 '제한됨'인지 확인",
+          "확장 프로그램 → Apps Script → 배포 → 새 배포 → 웹 앱",
+          "실행 사용자 '나', 액세스 '모든 사용자'로 배포하고 권한 승인",
+          "시트 메뉴 학교생활 → 웹 설치 코드 발급",
+          "웹앱 주소에서 설치 코드·학교 정보·학급·첫 관리자 입력 후 설치",
+          "학생·교직원·학부모 등록과 담임 배정",
+          "상벌점 규칙과 상담 정책 설정, 매일 백업 켜기",
+          "초대 코드와 웹앱 주소를 본인에게 전달"
+        ],
+        "changelog": [
+          "v0.6.10 상벌점 기록 삭제 기능 추가(사유 필수, 감사 기록)",
+          "v0.6.9 상벌점 입력한 사람 표시, 학부모·학생에게는 가운데 글자 가림",
+          "v0.6.8 앱 이름을 '학교생활'로 변경",
+          "v0.6.7 학생·학부모 한 명씩 직접 등록, 초대 코드 숫자 10자리로 변경",
+          "v0.6.6 CSV 등록 시 초대 코드 자동 발급과 목록 내려받기",
+          "v0.6.5 학년·반 선택 후 여러 학생 상벌점 동시 기록",
+          "v0.6.4 무료 요금제 속도 개선(캐시, 읽기 묶음 처리)",
+          "v0.6.3 한글 엑셀 등록 양식 제공",
+          "v0.6.2 상담 화면, 복구 후 잠금 해제, 시트 공개 감지 수정"
+        ],
+        "category": "학교업무",
+        "featured": true,
+        "isExample": false,
+        "sortOrder": 1,
+        "appUrl": "https://docs.google.com/spreadsheets/d/1Y30EMa42VAqOrTR4orioUbFTJGGbK8RCWFfj1k9DyXE/copy",
+        "githubUrl": "",
+        "guideUrl": "https://docs.google.com/document/d/1FRhpEU8tLLY6qdXBhPFGRNzRJkL-UN0VLMskyR5mALg/edit?usp=sharing",
+        "updatedAt": "2026-11-08",
+        "visible": true,
+        "showExampleBadge": true
+      },
+      {
         "id": "testauto",
         "title": "시험시간표 제작프로그램",
         "summary": "시험기간 시간표를 제작할 수 있습니다.",
@@ -118,7 +207,7 @@
         "category": "학교업무",
         "featured": true,
         "isExample": false,
-        "sortOrder": 1,
+        "sortOrder": 2,
         "appUrl": "https://docs.google.com/spreadsheets/d/195l4b453SO2AHFNlSdhUaGkdt70Yi5lZ-R88T7qJvxg/copy",
         "githubUrl": "",
         "guideUrl": "https://docs.google.com/spreadsheets/d/195l4b453SO2AHFNlSdhUaGkdt70Yi5lZ-R88T7qJvxg/edit?gid=1258942548#gid=1258942548",
@@ -146,7 +235,7 @@
         "category": "학교업무",
         "featured": true,
         "isExample": false,
-        "sortOrder": 2,
+        "sortOrder": 3,
         "appUrl": "",
         "githubUrl": "",
         "guideUrl": "",
@@ -196,7 +285,7 @@
         "category": "수업 도구",
         "featured": true,
         "isExample": true,
-        "sortOrder": 3,
+        "sortOrder": 4,
         "appUrl": "",
         "githubUrl": "",
         "guideUrl": "",
@@ -245,7 +334,7 @@
         "category": "학교업무",
         "featured": true,
         "isExample": true,
-        "sortOrder": 4,
+        "sortOrder": 5,
         "appUrl": "",
         "githubUrl": "",
         "guideUrl": "",
@@ -295,7 +384,7 @@
         "category": "교육용 게임",
         "featured": true,
         "isExample": true,
-        "sortOrder": 5,
+        "sortOrder": 6,
         "appUrl": "",
         "githubUrl": "",
         "guideUrl": "",
@@ -344,7 +433,7 @@
         "category": "학교업무",
         "featured": false,
         "isExample": true,
-        "sortOrder": 6,
+        "sortOrder": 7,
         "appUrl": "",
         "githubUrl": "",
         "guideUrl": "",
@@ -394,7 +483,7 @@
         "category": "수업 도구",
         "featured": false,
         "isExample": true,
-        "sortOrder": 7,
+        "sortOrder": 8,
         "appUrl": "",
         "githubUrl": "",
         "guideUrl": "",
@@ -443,7 +532,7 @@
         "category": "생활 편의",
         "featured": false,
         "isExample": true,
-        "sortOrder": 8,
+        "sortOrder": 9,
         "appUrl": "",
         "githubUrl": "",
         "guideUrl": "",
@@ -664,16 +753,77 @@
         "description": "✅ 학교·학년·학급별 공지와 읽음 확인\n✅ 학년·반을 골라 여러 학생 상벌점 한 번에 기록\n✅ 공개 범위에 따라 학부모·학생에게 상벌점 공개\n✅ 담임 상담 시간 열기, 학부모 상담 신청·승인\n✅ 초대 코드로만 가입, 역할별로 다른 화면\n✅ 한글 엑셀 양식으로 학생·학부모 일괄 등록\n\n설치 방법은 아래 링크를 참고하세요.https://docs.google.com/document/d/1Waa6dT7j3PtHJuFIwkdxZM8ivhVgeiHKaz2s6RKdVC8 \n\n각 권한별 설명서\n학교 관리자용 설명서\nhttps://docs.google.com/document/d/1FRhpEU8tLLY6qdXBhPFGRNzRJkL-UN0VLMskyR5mALg\n\n담임용 설명서\nhttps://docs.google.com/document/d/1YMq0hZqaa8fggjHo_-jgj387AcLFU436KFH6ZbUUjL0\n\n학부모용 설명서\nhttps://docs.google.com/document/d/1IjZiq4dScu0gulvctujpLHnSq1-TGSYYvr1TCk4Noxk\n\n학생용 설명서\nhttps://docs.google.com/document/d/1yAC4ishe9T01C2JzUdTIFSyczhEMWyXlfOjmvaAeITE",
         "thumbnail": "assets/uploads/5c9ac0ea60b452c0fca8ccbf75c4367b21bfb866c4a7e4163c11418ba39b6dc6.webp",
         "status": "배포 중",
-        "tags": [],
+        "tags": [
+          "학교생활",
+          "학부모상담",
+          "상벌점",
+          "학교공지",
+          "가정통신문",
+          "담임업무",
+          "교무업무",
+          "교사업무경감",
+          "구글시트",
+          "앱스크립트",
+          "에듀테크"
+        ],
         "screenshots": [
           "assets/uploads/5c9ac0ea60b452c0fca8ccbf75c4367b21bfb866c4a7e4163c11418ba39b6dc6.webp"
         ],
-        "features": [],
-        "targetUsers": [],
-        "supportedDevices": [],
-        "useCases": [],
-        "instructions": [],
-        "changelog": [],
+        "features": [
+          "학교 전체·학년·학급별 공지 게시와 읽음 확인",
+          "학년·반을 골라 여러 학생에게 상벌점 한 번에 기록",
+          "상벌점 규칙별 공개 범위 설정(교직원만 / 교직원·학부모 / 학부모·학생)",
+          "학부모·학생 화면에서 입력 교사 이름 가운데 글자 가림(예: 박O민)",
+          "상벌점 정정·삭제와 감사 기록",
+          "담임 상담 가능 시간 열기, 학부모 상담 신청·승인·변경·취소",
+          "숫자 10자리 초대 코드로만 가입(7일 유효, 1회용)",
+          "학생·학부모 등록 시 초대 코드 자동 발급과 목록 내려받기",
+          "한글 엑셀 양식(CSV) 일괄 등록과 한 명씩 직접 등록",
+          "관리자·담임·학부모·학생 역할별 메뉴와 권한",
+          "복구 코드로 비밀번호 재설정, 로그인 실패 잠금",
+          "드라이브 비공개 폴더 자동 백업과 시트 공개 감지"
+        ],
+        "targetUsers": [
+          "학부모 소통 창구를 하나로 모으고 싶은 소규모 학교 관리자",
+          "별도 서버나 유료 서비스 없이 시작하고 싶은 학교"
+        ],
+        "supportedDevices": [
+          "PC(Windows·macOS) Chrome·Edge·Safari 브라우저",
+          "안드로이드 휴대폰 Chrome",
+          "아이폰·아이패드 Safari",
+          "태블릿 웹 브라우저",
+          "홈 화면에 추가해 앱처럼 실행 가능"
+        ],
+        "useCases": [
+          "교실 청소 봉사 학생 여러 명에게 상점을 한 번에 기록",
+          "학년 전체 체험학습 안내를 학부모에게만 공지",
+          "학부모 상담 주간에 담임이 시간을 열고 학부모가 직접 신청",
+          "신입생 명단을 엑셀로 올리고 초대 코드 목록을 개별안내",
+          "학부모 공개 규칙만 골라 가정과 생활 기록 공유",
+          "학생이 자신의 상점·벌점을 휴대폰으로 확인"
+        ],
+        "instructions": [
+          "사본 만들기 링크로 원본 시트를 내 드라이브에 복사",
+          "사본 시트 공유 설정이 '제한됨'인지 확인",
+          "확장 프로그램 → Apps Script → 배포 → 새 배포 → 웹 앱",
+          "실행 사용자 '나', 액세스 '모든 사용자'로 배포하고 권한 승인",
+          "시트 메뉴 학교생활 → 웹 설치 코드 발급",
+          "웹앱 주소에서 설치 코드·학교 정보·학급·첫 관리자 입력 후 설치",
+          "학생·교직원·학부모 등록과 담임 배정",
+          "상벌점 규칙과 상담 정책 설정, 매일 백업 켜기",
+          "초대 코드와 웹앱 주소를 본인에게 전달"
+        ],
+        "changelog": [
+          "v0.6.10 상벌점 기록 삭제 기능 추가(사유 필수, 감사 기록)",
+          "v0.6.9 상벌점 입력한 사람 표시, 학부모·학생에게는 가운데 글자 가림",
+          "v0.6.8 앱 이름을 '학교생활'로 변경",
+          "v0.6.7 학생·학부모 한 명씩 직접 등록, 초대 코드 숫자 10자리로 변경",
+          "v0.6.6 CSV 등록 시 초대 코드 자동 발급과 목록 내려받기",
+          "v0.6.5 학년·반 선택 후 여러 학생 상벌점 동시 기록",
+          "v0.6.4 무료 요금제 속도 개선(캐시, 읽기 묶음 처리)",
+          "v0.6.3 한글 엑셀 등록 양식 제공",
+          "v0.6.2 상담 화면, 복구 후 잠금 해제, 시트 공개 감지 수정"
+        ],
         "category": "학교업무",
         "featured": true,
         "isExample": false,
@@ -1176,6 +1326,10 @@
   },
   "history": [
     {
+      "id": "ea3c53d9-e7a3-4792-9135-4dc8a132b445",
+      "createdAt": "2026-11-08T13:56:08+00:00"
+    },
+    {
       "id": "1e3425c4-11f7-456d-beab-f532ee3f663c",
       "createdAt": "2026-10-23T06:12:44+00:00"
     },
@@ -1250,11 +1404,7 @@
     {
       "id": "1e371206-9a62-4cf7-a0f6-38ba58dfe8a9",
       "createdAt": "2026-10-20T13:35:35+00:00"
-    },
-    {
-      "id": "6412fb49-d02f-4211-93f7-8a6118c57b55",
-      "createdAt": "2026-10-20T13:26:03+00:00"
     }
   ],
-  "updatedAt": "2026-11-08T13:54:50+00:00"
+  "updatedAt": "2026-11-08T13:56:10+00:00"
 }
