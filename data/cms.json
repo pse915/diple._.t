@@ -168,7 +168,7 @@
         "sortOrder": 1,
         "appUrl": "https://docs.google.com/spreadsheets/d/1Y30EMa42VAqOrTR4orioUbFTJGGbK8RCWFfj1k9DyXE/copy",
         "githubUrl": "",
-        "guideUrl": "https://docs.google.com/document/d/1FRhpEU8tLLY6qdXBhPFGRNzRJkL-UN0VLMskyR5mALg/edit?usp=sharing",
+        "guideUrl": "https://docs.google.com/document/d/1Waa6dT7j3PtHJuFIwkdxZM8ivhVgeiHKaz2s6RKdVC8/edit?usp=sharing",
         "updatedAt": "2026-11-08",
         "visible": true,
         "showExampleBadge": true
@@ -830,7 +830,7 @@
         "sortOrder": 1,
         "appUrl": "https://docs.google.com/spreadsheets/d/1Y30EMa42VAqOrTR4orioUbFTJGGbK8RCWFfj1k9DyXE/copy",
         "githubUrl": "",
-        "guideUrl": "https://docs.google.com/document/d/1FRhpEU8tLLY6qdXBhPFGRNzRJkL-UN0VLMskyR5mALg/edit?usp=sharing",
+        "guideUrl": "https://docs.google.com/document/d/1Waa6dT7j3PtHJuFIwkdxZM8ivhVgeiHKaz2s6RKdVC8/edit?usp=sharing",
         "updatedAt": "2026-11-08",
         "visible": true,
         "showExampleBadge": true
@@ -1326,6 +1326,10 @@
   },
   "history": [
     {
+      "id": "e6bad67e-62a1-4a8f-a468-17391aa15451",
+      "createdAt": "2026-11-08T14:18:54+00:00"
+    },
+    {
       "id": "9be4ecd7-b1f7-4644-bef8-cd941b940dae",
       "createdAt": "2026-11-08T14:02:15+00:00"
     },
@@ -1400,11 +1404,7 @@
     {
       "id": "1c7ca196-c099-432d-b9ab-e116424ba93f",
       "createdAt": "2026-10-20T13:40:39+00:00"
-    },
-    {
-      "id": "719bebac-1853-401c-8262-53a0625bcbc6",
-      "createdAt": "2026-10-20T13:37:12+00:00"
     }
   ],
-  "updatedAt": "2026-11-08T14:02:17+00:00"
+  "updatedAt": "2026-11-08T14:18:56+00:00"
 }
